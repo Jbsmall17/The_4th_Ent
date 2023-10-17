@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/home.css"
-import Services from '../components/services'
+import Services from "../components/Services"
 import Footer from '../components/Footer'
 import Header from "../components/Header"
 
