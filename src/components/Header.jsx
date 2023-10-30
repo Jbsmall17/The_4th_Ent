@@ -62,6 +62,7 @@ export default function Header({activeLink}) {
 
     function handleClick(){
         navigate("/")
+        setMobileOpen(false)
         setTimeout(()=>{
             const servicesDiv = document.querySelector("#services")
             servicesDiv.scrollIntoView({
@@ -110,7 +111,7 @@ export default function Header({activeLink}) {
     <>
     <header className='header' ref={headerRef}>
         <div className='line' ref={lineRef}></div>
-        <img src={Logo} className='logo' alt='4th entertainment website' />
+        <img onClick={homeClick} style={{cursor : "pointer"}} src={Logo} className='logo' alt='4th entertainment website' />
       <nav className='navbar-desktop'>
         <ul className='navbar-list'>
             <li onClick={homeClick} className={page === "home" ? "active" : null}>
@@ -153,7 +154,7 @@ export default function Header({activeLink}) {
         <div className='line' ref={lineRef2}></div>
         <div className='mobile-header-container' >
             <HiBars3BottomLeft onClick={()=>{setMobileOpen(true)}} color='ffa500' size="3.5em"/>
-            <img src={Logo} className='mobile-logo' alt='The 4th Ent logo' />
+            <img onClick={homeClick} style={{cursor: "pointer"}} src={Logo} className='mobile-logo' alt='The 4th Ent logo' />
         </div>
         <div className={ isMobileOpen ? 'mobile-navbar open' : 'mobile-navbar'}>
             <div onClick={homeClick} className='mobile-navbar-links'>
