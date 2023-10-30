@@ -6,7 +6,7 @@ div.fouth-service > p:nth-of-type(1){
     font-size: 24px;
     margin-block-end: 8px;
     background: linear-gradient( 45deg, #ffbe07 10%, #ff2c18 90%);
-    /* -webkit-text-fill-color: transparent;  */
+    font-family: 'Roboto Condensed', sans-serif;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
