@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom"
-import { useState, lazy, Suspense } from 'react'
+import { useState, lazy, Suspense, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faXmark } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 
 
@@ -10,9 +12,33 @@ const Blog = lazy(()=> import("./pages/Blog"))
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [modal, setModal] = useState(false)
+  
+  useEffect(()=>{
+    setTimeout(()=>{
+      setModal(true)
+    },5000)
+  },[])
   return (
     <>
+      { modal &&
+      <div className="modal-container">
+        <div className="modal">
+          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#008080"}} />
+          <p>Signup to Our Newsletter</p>
+          <p>be part of a community of Music Enthusiast</p>
+          <div>
+            <input type="text" placeholder="email" />
+            <button>Join</button>
+          </div>
+          <FontAwesomeIcon 
+            icon={faXmark} size="lg" 
+            style={{color : "#008080"}}className="svg-cancel"
+            onClick={()=> setModal(false)}  
+          />
+        </div>
+      </div>
+      }
       <Routes >
         <Route 
           index

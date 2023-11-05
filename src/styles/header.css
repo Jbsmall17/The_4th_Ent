@@ -115,9 +115,77 @@ div.mobile-navbar-links:nth-of-type(2) > svg,
 div.mobile-navbar-links:nth-of-type(5) > svg{
     font-size: 48px;
 }
+
+div.prompt{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  transform: translateY(102.5%);
+  background-color:#fff;
+  width:100%;
+  padding:2.5px;
+  color: #ffa500;
+}
+
+div.prompt > div{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  animation: fastener 10s linear infinite alternate;
+}
+@keyframes fastener {
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform:translateX(-100%);
+  }
+}
+div.prompt > div:hover{
+  animation-play-state: paused;
+}
+div.prompt  a{
+  font-size: 16px;
+  color: #ffa500;
+  text-decoration: none;
+  white-space: nowrap;
+
+}
+div.prompt > svg{
+  position: absolute;
+  top:0;
+  transform: translateY(15%);
+  right:2%;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
     header.mobile-header{
         display: none;
+    }
+    div.prompt{
+      position: absolute;
+      bottom: 0;
+      left:0;
+      transform: translateY(102.5%);
+      background-color:#fff;
+      width:100%;
+      padding:5px;
+      color: #ffa500;
+    }
+    div.prompt  a{
+      font-size: 20px;
+      color: #ffa500;
+      text-decoration: none;
+      white-space: nowrap;
+    
+    }
+    div.prompt > svg{
+      position: absolute;
+      top:0;
+      transform: translateY(30%);
+      right:2%;
+      cursor: pointer;
     }
     header.header{
         background-color: #000;

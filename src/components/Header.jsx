@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Logo from "../assets/61.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMusic,faNewspaper,faCircleXmark,faHouse, faScrewdriverWrench, faBriefcase, faHandsAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons'
+import { faMusic,faNewspaper,faCircleXmark,faHouse, faScrewdriverWrench, faBriefcase,faXmark } from '@fortawesome/free-solid-svg-icons'
 import "../styles/header.css"
 import { HiBars3BottomLeft } from "react-icons/hi2"
 import { useNavigate } from 'react-router-dom'
@@ -12,7 +12,8 @@ export default function Header({activeLink}) {
     const [isMobileOpen, setMobileOpen] = useState(false);
     const [isScreenBig, setScreenBig] = useState(true);
     const [navbarHeight, setNavbarHeight] = useState(0);
-    const [page, setPage] = useState(activeLink)
+    const [page, setPage] = useState(activeLink);
+    const [cancel, setCancel] = useState(false)
     const headerRef = useRef()
     const headerMobileRef = useRef()
     const lineRef = useRef()
@@ -149,6 +150,20 @@ export default function Header({activeLink}) {
             <p>Playlist</p>
             <span className='hover-text'>playlist</span>
         </button>
+        <div className='prompt' style={{display: cancel ? "none" : "block"}}>
+            <div>
+                <a href='javascript:void(0)'>listen to this week's playlist!</a>
+                <a href='javascript:void(0)'>listen to this week's playlist!!</a>
+                <a href='javascript:void(0)'>listen to this week's playlist!!!</a>
+                <a href='javascript:void(0)'>listen to this week's playlist!!!!</a>
+            </div>
+            <FontAwesomeIcon 
+                className='cancel' 
+                size='xl' 
+                icon={faXmark} style={{color: "#000000"}} 
+                onClick={()=> setCancel(true)}      
+            />
+        </div>
     </header>
     <header className='mobile-header' ref={headerMobileRef} >
         <div className='line' ref={lineRef2}></div>
@@ -185,6 +200,18 @@ export default function Header({activeLink}) {
             <div className='mobile-navbar-links'>
                 <FontAwesomeIcon  onClick={()=>{setMobileOpen(false)}} icon={faCircleXmark} size="2lx" style={{color: "#e00f0f"}}  />
             </div>
+        </div>
+        <div className='prompt' style={{display: cancel ? "none" : "block"}}>
+            <div>
+                <a href='javascript:void(0)'>listen to this week's playlist!</a>
+                <a href='javascript:void(0)'>listen to this week's playlist!!</a>
+            </div>
+            <FontAwesomeIcon 
+                className='cancel' 
+                size='xl' 
+                icon={faXmark} style={{color: "#000000"}} 
+                onClick={()=> setCancel(true)}      
+            />
         </div>
     </header>
     

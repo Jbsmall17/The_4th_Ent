@@ -3,6 +3,7 @@ import "../styles/home.css"
 import Services from "../components/Services"
 import Footer from '../components/Footer'
 import Header from "../components/Header"
+import Testimonials from "../components/Testimonials.jsx"
 import picture1 from "../assets/picture1.jpeg"
 import picture2 from "../assets/picture2.jpeg"
 import picture3 from "../assets/picture3.jpeg"
@@ -18,6 +19,8 @@ import picture12 from "../assets/picture12.jpeg"
 import picture13 from "../assets/picture13.jpeg"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
@@ -173,6 +176,49 @@ export default function Home() {
           />
         </div>
       </div>
+      <div className='event-container' id='event'>
+        <h3>Our Event</h3>
+          <div className='event'>
+            <div className='event-date'>11/05/23</div>
+            <div className='event-main'>
+              <p className='event-name'>Event</p>
+              <p className='event-desc'>
+                Magna officia sint deserunt quis exercitation cupidatat. 
+                Quis nulla anim dolore sint cupidatat ipsum ullamco ad. 
+                Proident fugiat deserunt ullamco ipsum culpa.
+              </p>
+              <a href='javascript:void(0)'>see more</a>
+              <FontAwesomeIcon icon={faArrowRight} rotation={45} />
+            </div>
+          </div>
+          <div className='event'>
+            <div className='event-date'>11/05/23</div>
+            <div className='event-main'>
+              <p className='event-name'>Event</p>
+              <p className='event-desc'>
+                Magna officia sint deserunt quis exercitation cupidatat. 
+                Quis nulla anim dolore sint cupidatat ipsum ullamco ad. 
+                Proident fugiat deserunt ullamco ipsum culpa.
+              </p>
+              <a href='javascript:void(0)'>see more</a>
+              <FontAwesomeIcon icon={faArrowRight} rotation={45} />
+            </div>
+          </div>
+          <div className='event'>
+            <div className='event-date'>11/05/23</div>
+            <div className='event-main'>
+              <p className='event-name'>Event</p>
+              <p className='event-desc'>
+                Magna officia sint deserunt quis exercitation cupidatat. 
+                Quis nulla anim dolore sint cupidatat ipsum ullamco ad. 
+                Proident fugiat deserunt ullamco ipsum culpa.
+              </p>
+              <a href='javascript:void(0)'>see more</a>
+              <FontAwesomeIcon icon={faArrowRight} rotation={45} />
+            </div>
+          </div>
+      </div>
+      {/* <Testimonials /> */}
       <Footer />
     </>
   )

@@ -26,6 +26,72 @@ div.homepage{
         height: 100%;
     }
 }
+
+div.event{
+    max-width:600px;
+    width:90%;
+    margin: 0 auto;
+    border-top: 8px dotted #ffffff;
+    position:relative;
+    padding-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+div.event-date{
+    position: absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%) translateY(-55%);
+    background: #000;
+    color: #ffa500;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    font-size: 24px;
+}
+div.event-main{
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+div.event-main > p.event-name{
+    font-weight: 600;
+    font-size: 28px;
+    /* margin-bottom: 0.5rem; */
+}
+
+div.event-main > p.event-desc{
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+}
+div.event-main > a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    color:  #00a2e8;
+}
+div.event-main > a:hover{
+    text-decoration: underline;
+}
+div.event-main > svg{
+    transform: rotate(-45deg);
+    color: #00a2e8;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 426px) {
+    div.event-main > p.event-name{
+        font-weight: 600;
+        font-size: 24px;
+        /* margin-bottom: 0.5rem; */
+    }
+    
+    div.event-main > p.event-desc{
+        font-weight: 300;
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+    
+}
 @media screen and (min-width: 1024px) {
     div.homepage{
         height: 80vh;
@@ -33,6 +99,7 @@ div.homepage{
     .swiper{
         height: 100%;
     }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -90,7 +157,8 @@ img.slide-img{
 div.home-services{
     padding: 50px 50px;
 }
-div.home-services > h3{
+div.home-services > h3,
+div.event-container > h3{
     text-align: center;
     font-size: 48px;
     font-weight: 600;
@@ -201,7 +269,8 @@ div.services-container{
             width: 60px
         }
     }
-    div.home-services > h3{
+    div.home-services > h3,
+    div.event-container > h3{
         font-size: 32px;
         margin-block-end: 25px;
     }    
