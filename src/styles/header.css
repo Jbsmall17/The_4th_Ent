@@ -19,14 +19,15 @@ header.mobile-header{
     padding-inline: 5%;
     padding-block: 10px;
     z-index: 3;
+    background-color: #008080;
 }
-header.mobile-header.scrolled{
+/* header.mobile-header.scrolled{
   background-color: #008080 ;
   position: fixed;
   top:0;
   left:0;
   width: 100%;
-}
+} */
 div.line{
   position: absolute;
   transform: translateY(50%);
@@ -153,8 +154,8 @@ div.prompt  a{
 }
 div.prompt > svg{
   position: absolute;
-  top:0;
-  transform: translateY(15%);
+  top:50%;
+  transform: translateY(-50%);
   right:2%;
   cursor: pointer;
 }
@@ -170,7 +171,7 @@ div.prompt > svg{
       transform: translateY(102.5%);
       background-color:#fff;
       width:100%;
-      padding:5px;
+      padding:2.5px;
       color: #ffa500;
     }
     div.prompt  a{
@@ -182,8 +183,8 @@ div.prompt > svg{
     }
     div.prompt > svg{
       position: absolute;
-      top:0;
-      transform: translateY(30%);
+      top:50%;
+      transform: translateY(-50%);
       right:2%;
       cursor: pointer;
     }
@@ -197,6 +198,7 @@ div.prompt > svg{
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid #fff;
+        background-color: #008080; 
         position: relative;
         z-index: 3;
     }
@@ -209,12 +211,12 @@ div.prompt > svg{
         height: 2px;
         background-color: #ffa500;
       }
-    header.header.scrolled{
+    /* header.header.scrolled{
         background-color: #008080 ;
         position: fixed;
         top:0;
         left:0;
-    }
+    } */
     img.logo{
         width: 4.5rem;
         /* height: 6rem; */
@@ -233,7 +235,7 @@ div.prompt > svg{
     }
     ul.navbar-list > li{
         position: relative;
-        overflow: hidden;
+        /* overflow: hidden; */
         width: 4.5rem;
         font-weight: 600;
         height: 4.5rem;
@@ -249,6 +251,31 @@ div.prompt > svg{
     ul.navbar-list > li.active{
       border: 2px dashed #ffa500;
       
+    }
+    ul.dropdown{
+      position: absolute;
+      top:100%;
+      z-index:99;
+      transform: translateY(15%);
+      list-style: none;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border-radius: 4px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all ease 0.5s;
+    }
+    ul.dropdown > li{
+      padding-bottom: 10px;
+      transition: all ease 0.5s;
+    }
+    ul.dropdown > li:hover{
+      opacity: 0.7;
+    }
+    ul.navbar-list > li:nth-of-type(1):hover .dropdown{
+      opacity: 1;
+      visibility: visible;
     }
     ul.navbar-list > li.active:hover .hover-text{
       background-color: #ffa500;
@@ -322,7 +349,6 @@ div.prompt > svg{
 
 @media screen and (min-width: 1024px){
 header.header{
-    background-color: #000;
     display: flex;
     width:100%;
     /* flex-direction: row; */

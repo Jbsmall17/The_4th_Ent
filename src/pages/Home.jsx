@@ -24,12 +24,16 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-
+import {fetchEvent} from "../backend/server.js"
+import { useNavigate } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
 
 export default function Home() {
+  const navigate = useNavigate()
   const homeDiv = useRef()
   const the4thDiv = useRef()
   const servicesRef = useRef(null)
@@ -46,14 +50,8 @@ export default function Home() {
     let NewCursorY 
     
     the4thDivNode.classList.add("appear")
-    if(window.scrollY > 0){
-      NewcursorX =  cursorX - homeDivNodeLeft
-      NewCursorY = cursorY + window.scrollY
-    }
-    else{
       NewcursorX =  cursorX - homeDivNodeLeft
       NewCursorY = cursorY - homeDivNodeTop
-    }
 
     the4thDivNode.style.top = `${NewCursorY}px`;
     the4thDivNode.style.left = `${NewcursorX}px`;
@@ -63,6 +61,27 @@ export default function Home() {
     const the4thDivNode = the4thDiv.current
     the4thDivNode.classList.remove("appear")
   }
+
+async function getEvent(){
+  const response = await fetchEvent()
+  console.log(response)
+}
+
+function handleClick(section){
+  navigate("/")
+  setTimeout(()=>{
+      const servicesDiv = document.querySelector(section)
+      servicesDiv.scrollIntoView({
+       behavior: 'smooth',
+       block: 'start',  // Align the top of the element with the top of the viewport
+       inline: 'start',
+      //  offsetTop : -navbarHeight
+      })
+  },50)
+}
+  useEffect(()=>{
+    getEvent()
+  },[])
 
   useEffect(()=>{
     const homeDivNode = homeDiv.current
@@ -74,15 +93,20 @@ export default function Home() {
       homeDivNode.removeEventListener("mouseleave", mouseLeaveHandler)
     }
   },[])
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <>
       <Header  activeLink={"home"}/>
       <div ref={homeDiv} className='homepage'>
         <p className='slogan' >THE MEDIA HUB</p>
         <p className='slogan1'>THE BEST AT WHAT WE DO</p>
-        <div className='theent' ref={the4thDiv} >
+        {/* <div onClick={()=>handleClick("#services")} className='theent' ref={the4thDiv} >
           <span>The</span><span>4th</span> <span>Ent.</span>
-        </div>
+        </div> */}
         <Swiper
           modules={[Autoplay, Navigation]}
           spaceBetween={50}
@@ -178,7 +202,7 @@ export default function Home() {
       </div>
       <div className='event-container' id='event'>
         <h3>Our Event</h3>
-          <div className='event'>
+          <div className='event' data-aos="fade-left" data-aos-duration="2000">
             <div className='event-date'>11/05/23</div>
             <div className='event-main'>
               <p className='event-name'>Event</p>
@@ -191,7 +215,7 @@ export default function Home() {
               <FontAwesomeIcon icon={faArrowRight} rotation={45} />
             </div>
           </div>
-          <div className='event'>
+          <div className='event' data-aos="fade-right" data-aos-duration="2000">
             <div className='event-date'>11/05/23</div>
             <div className='event-main'>
               <p className='event-name'>Event</p>
@@ -204,7 +228,7 @@ export default function Home() {
               <FontAwesomeIcon icon={faArrowRight} rotation={45} />
             </div>
           </div>
-          <div className='event'>
+          <div className='event' data-aos="fade-left" data-aos-duration="2000">
             <div className='event-date'>11/05/23</div>
             <div className='event-main'>
               <p className='event-name'>Event</p>
@@ -218,7 +242,7 @@ export default function Home() {
             </div>
           </div>
       </div>
-      {/* <Testimonials /> */}
+      <Testimonials />
       <Footer />
     </>
   )

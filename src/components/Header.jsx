@@ -2,15 +2,19 @@ import React, {useState, useEffect, useRef} from 'react'
 import Logo from "../assets/61.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMusic,faNewspaper,faCircleXmark,faHouse, faScrewdriverWrench, faBriefcase,faXmark } from '@fortawesome/free-solid-svg-icons'
-import "../styles/header.css"
-import { HiBars3BottomLeft } from "react-icons/hi2"
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-scroll';
+import "../styles/header.css";
+import { HiBars3BottomLeft } from "react-icons/hi2";
+import { useNavigate } from 'react-router-dom';
+import { fetchPlaylist } from '../backend/server';
+import { Oval } from  'react-loader-spinner'
+
+
 
 
 export default function Header({activeLink}) {
     const [isMobileOpen, setMobileOpen] = useState(false);
     const [isScreenBig, setScreenBig] = useState(true);
+    const [isLoading, setIsLoading] = useState(false)
     const [navbarHeight, setNavbarHeight] = useState(0);
     const [page, setPage] = useState(activeLink);
     const [cancel, setCancel] = useState(false)
@@ -61,16 +65,16 @@ export default function Header({activeLink}) {
         })
     }
 
-    function handleClick(){
+    function handleClick(section){
         navigate("/")
         setMobileOpen(false)
         setTimeout(()=>{
-            const servicesDiv = document.querySelector("#services")
+            const servicesDiv = document.querySelector(section)
             servicesDiv.scrollIntoView({
              behavior: 'smooth',
              block: 'start',  // Align the top of the element with the top of the viewport
              inline: 'start',
-             offsetTop : -navbarHeight
+            //  offsetTop : -navbarHeight
             })
         },50)
     }
@@ -108,34 +112,38 @@ export default function Header({activeLink}) {
             }
         })
     },[isScreenBig])
+
+    async function getPlaylist(){
+        const reponse = await fetchPlaylist()
+        console.log(reponse)
+    }
+    useEffect(()=>{
+        getPlaylist()
+    },[])
   return (
     <>
     <header className='header' ref={headerRef}>
-        <div className='line' ref={lineRef}></div>
+        {/* <div className='line' ref={lineRef}></div> */}
         <img onClick={homeClick} style={{cursor : "pointer"}} src={Logo} className='logo' alt='4th entertainment website' />
       <nav className='navbar-desktop'>
         <ul className='navbar-list'>
             <li onClick={homeClick} className={page === "home" ? "active" : null}>
                 <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ffa500" :"#ffffff"}} />
                 <span className='hover-text'>Home</span>
+                <ul className='dropdown'>
+                    <li onClick={()=>handleClick("#services")}>Services</li>
+                    <li onClick={()=>handleClick("#event")}>Event</li>
+                    <li onClick={()=>handleClick("#testimonials")}>Testimonial</li>
+                </ul>
             </li>
             <li onClick={artisteClick} className={page === "artiste" ? "active" : null} >
                 <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ffa500" :"#ffffff"}} />
                 <span className='hover-text' >Artiste</span>
             </li>
-            <li  onClick={handleClick}>
-                {/* <Link
-                    onClick={handleClick}
-                    to="services" // Replace with the ID of the section you want to scroll to
-                    spy={true}
-                    smooth={true}
-                    offset={-170} // Adjust this value if needed to control the scroll offset
-                    duration={500}
-                > */}
-                    <FontAwesomeIcon icon={faScrewdriverWrench} size="xl" style={{color: "#ffffff",}} />
-                    <span className='hover-text' >Services</span>
-                {/* </Link> */}
-            </li>
+            {/* <li  onClick={handleClick}>
+                <FontAwesomeIcon icon={faScrewdriverWrench} size="xl" style={{color: "#ffffff",}} />
+                <span className='hover-text' >Services</span>
+            </li> */}
             <li onClick={execsClick} className={page === "execs" ? "active" : null}>
                 <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ffa500" : "#ffffff"}} />
                 <span className='hover-text' >Meet The Execs</span>
@@ -152,10 +160,10 @@ export default function Header({activeLink}) {
         </button>
         <div className='prompt' style={{display: cancel ? "none" : "block"}}>
             <div>
-                <a href='javascript:void(0)'>listen to this week's playlist!</a>
-                <a href='javascript:void(0)'>listen to this week's playlist!!</a>
-                <a href='javascript:void(0)'>listen to this week's playlist!!!</a>
-                <a href='javascript:void(0)'>listen to this week's playlist!!!!</a>
+                <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
+                <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
+                <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
+                <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
             </div>
             <FontAwesomeIcon 
                 className='cancel' 
@@ -203,8 +211,8 @@ export default function Header({activeLink}) {
         </div>
         <div className='prompt' style={{display: cancel ? "none" : "block"}}>
             <div>
-                <a href='javascript:void(0)'>listen to this week's playlist!</a>
-                <a href='javascript:void(0)'>listen to this week's playlist!!</a>
+                <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
+                <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
             </div>
             <FontAwesomeIcon 
                 className='cancel' 

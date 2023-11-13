@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import "../styles/blog.css"
 import BlogPost from '../components/BlogPost'
-
+import {fetchBlog} from "../backend/server"
+ 
 export default function Blog() {
+
+    async function getBlog(){
+        const response = await fetchBlog()
+        console.log(response)
+
+    }
+
+    useEffect(()=>{
+        getBlog()
+    },[])
   return (
     <div className='blog-page'>
         <Header activeLink={"bloggg"} />
