@@ -1,5 +1,5 @@
 div.artistepage-container{
-    padding-block: 25px;
+    padding-block: 40px;
     padding-inline: 100px;
 }
 
@@ -17,8 +17,15 @@ div.artistepage-container > p{
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    margin-block-end: 25px;
+    margin-block-end: 35px;
 }
+
+@media screen and (max-width:768px) {
+    div.artistepage-container > p {
+        font-size: 32px;
+        margin-block-end: 25px;
+    }    
+}  
 
 div.artiste-container{
     width:200px;

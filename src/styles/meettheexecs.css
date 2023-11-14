@@ -1,5 +1,5 @@
 div.meet-the-execs-container{
-    padding-block: 25px;
+    padding-block: 40px;
     padding-inline: 100px;
 }
 
@@ -12,7 +12,14 @@ div.meet-the-execs-container > p{
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    margin-block-end: 25px;
+    margin-block-end: 35px;
+}
+
+@media screen and (max-width: 768px){
+    div.meet-the-execs-container > p{
+        font-size: 32px;
+        margin-block-end: 25px;
+    }
 }
 
 div.execs-container{
