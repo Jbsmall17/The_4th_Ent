@@ -42,11 +42,25 @@ export default function Footer() {
             <div className='footer-container-left'>
                 <img className='logo' src={logo} alt='the fouth enternment logo at the footer' />
                 <div className='socials-container'>
-                    <FaInstagram size={"2em"}/>
-                    <FaSquareXTwitter size={"2em"}/>
+                    <a
+                      href='https://www.instagram.com/the4thent/'
+                      target='_blank'
+                    >
+                      <FaInstagram size={"2em"} style={{color: "#fff"}} />
+                    </a>
+                    <a
+                      href='https://twitter.com/the4thent_'
+                      target='_blank'
+                    >
+                      <FaSquareXTwitter size={"2em"} style={{color: "#fff"}}/>
+                    </a>
                     <FaFacebookF size={"2em"} />
                     <FaPinterestP size={"2em"} />
-                    <FaLinkedin size={"2em"} />
+                    <a 
+                      href='https://www.linkedin.com/company/the4thmediaandentertainment/'
+                      target='_blank'  
+                      ><FaLinkedin size={"2em"} style={{color: "#fff"}} />
+                    </a>
                 </div>
                 <p className='coypright'><span>&copy;copyright</span><span>The 4TH ENT</span> </p>
             </div>

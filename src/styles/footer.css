@@ -6,7 +6,7 @@ div.footer-container{
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #ffa500;
-    background-color: #008080;
+    background-color: #4b0082;
 }
 img.logo{
     width: 5.6rem;
@@ -20,6 +20,7 @@ div.socials-container{
     flex-direction: row;
     gap: 12px;
     margin-block-end: 8px;
+    cursor: pointer;
 }
 p.coypright{
     display: flex;
@@ -165,7 +166,7 @@ form.subscribe-form > div > input:focus{
         gap: 20px;
         align-items: center;
         border-top: 2px solid #ffa500;
-        background-color: #008080;
+        background-color: #4b0082;
     }
     div.footer-container-left{
         text-align: center;

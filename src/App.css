@@ -19,6 +19,37 @@ div#root{
   position: relative;
 }
 
+.arrow-up{
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 20;
+  cursor: pointer;
+  visibility: hidden;
+  transition: all ease 0.5s;
+}
+
+a.contact{
+  position: fixed;
+  top:50%;
+  left:0;
+  transform: translateY(-50%) rotate(90deg);
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  z-index: 3;
+  background-color: #3498db;
+  border-radius: 8px;
+  transform-origin: bottom left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-up.appear{
+  visibility: visible;
+}
+
 div.modal-container{
   position: fixed;
   z-index: 10;
@@ -50,7 +81,7 @@ div.modal > svg{
 
 div.modal > p:nth-of-type(1){
   font-size: 2rem;
-  color: #008080;
+  color: #4b0082;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
@@ -96,7 +127,7 @@ div.modal > form > button{
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-color: #008080;
+  background-color: #4b0082;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -120,7 +151,7 @@ div.modal > form > button:hover{
 
   div.modal > p:nth-of-type(1) {
     font-size: 1.5rem;
-    color: #008080;
+    color: #4b0082;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }

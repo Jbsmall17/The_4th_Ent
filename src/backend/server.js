@@ -12,12 +12,12 @@ import axios from "axios"
 // const Event = base(import.meta.env.EVENT_ID);
 // const Blog = base(import.meta.env.BLOG_ID)
 
-const BASE_ID = import.meta.env.VITE_BASE_ID || "appNbLKyw4Hoeg0sR"
-const  EVENT_ID = import.meta.env.VITE_EVENT_ID || "tblg0vqYZoeB6A1oz"
-const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID || "tblE30CiKSiktzlfE"
-const BLOG_ID = import.meta.env.VITE_BLOG_ID || "tbln4KQucjjAR8Oqq"
-const SUBSCRIBERS_ID = "tblMR4Au6tANNXRIH"
-const TOKEN = import.meta.env.VITE_BASE_TOKEN || "patwOb4U9TbrHjmG5.a1f27bcc1610fc4e5e74da62f4590bdd941ad6d8337f3c5809a830a2aabbb700"
+const BASE_ID = import.meta.env.VITE_BASE_ID
+const  EVENT_ID = import.meta.env.VITE_EVENT_ID 
+const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID 
+const BLOG_ID = import.meta.env.VITE_BLOG_ID 
+const SUBSCRIBERS_ID = import.meta.env.VITE_SUBSCRIBERS_ID 
+const TOKEN = import.meta.env.VITE_BASE_TOKEN 
 
 
 const ENDPOINT = `https://api.airtable.com/v0/${BASE_ID}`

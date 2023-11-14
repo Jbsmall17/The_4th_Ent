@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { useState, lazy, Suspense, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faXmark, faCircleArrowUp } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 import { Oval } from  'react-loader-spinner'
 import { postSubscriber } from "./backend/server"
@@ -43,18 +43,49 @@ function App() {
     }
     setEmail("")
   }
+  function checkVisibility(){
+    const arrowUp = document.querySelector(".arrow-up")
+    if(arrowUp){
+      if(window.scrollY > 50){
+        arrowUp.classList.add("appear")
+      }
+      else{
+        arrowUp.classList.remove("appear")
+      }
+    }
+  }
+  function handleClick(){
+    window.scrollTo({
+      top:0,
+      left:0,
+      behavior: "smooth"
+    })
+  }
 
   useEffect(()=>{
     setTimeout(()=>{
       setModal(true)
     },5000)
   },[])
+
+  useEffect(()=>{
+    window.addEventListener('scroll', checkVisibility)
+    return ()=>{
+      window.removeEventListener("scroll", checkVisibility)
+    }
+  })
   return (
     <>
+      <a className="contact" href="mailto:the4thmande@gmail.com">Contact us</a>
+      <FontAwesomeIcon 
+        icon={faCircleArrowUp} 
+        className="arrow-up" size="2xl" 
+        onClick={handleClick}
+        />
       { modal &&
       <div className="modal-container">
         <div className="modal">
-          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#008080"}} />
+          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#4b0082"}} />
           <p>Signup to Our Newsletter</p>
           <p>be part of a community of Music Enthusiast</p>
           <form onSubmit={postEmail}>

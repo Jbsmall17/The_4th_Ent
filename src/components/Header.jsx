@@ -82,35 +82,35 @@ export default function Header({activeLink}) {
         const headerRefnode =  headerRef.current
         const navOffset = headerRefnode.getBoundingClientRect().height
         setNavbarHeight(navOffset)
-        window.addEventListener("scroll",()=>{
-            // console.log(window.scrollY, contentHeight, estimatedThumbHeight, window.innerHeight)
-            if( window.innerWidth >= 768){
-                setScreenBig(true)
-                if(window.scrollY > 0){
-                    headerRef.current.classList.add("scrolled")
-                    lineRef.current.classList.add("motion")
-                    lineRef2.current.classList.add("motion")
-                }
-                else{
-                    headerRef.current.classList.remove("scrolled")
-                    lineRef.current.classList.remove("motion")
-                    lineRef2.current.classList.remove("motion")
-                }
-            }
-            else{
-                setScreenBig(false)
-                if(window.scrollY > 0){
-                    headerMobileRef.current.classList.add("scrolled")
-                    lineRef.current.classList.add("motion")
-                    lineRef2.current.classList.add("motion")
-                }
-                else{
-                    headerMobileRef.current.classList.remove("scrolled")
-                    lineRef.current.classList.remove("motion")
-                    lineRef2.current.classList.remove("motion")
-                }
-            }
-        })
+        // window.addEventListener("scroll",()=>{
+        //     // console.log(window.scrollY, contentHeight, estimatedThumbHeight, window.innerHeight)
+        //     if( window.innerWidth >= 768){
+        //         setScreenBig(true)
+        //         if(window.scrollY > 0){
+        //             headerRef.current.classList.add("scrolled")
+        //             lineRef.current.classList.add("motion")
+        //             lineRef2.current.classList.add("motion")
+        //         }
+        //         else{
+        //             headerRef.current.classList.remove("scrolled")
+        //             lineRef.current.classList.remove("motion")
+        //             lineRef2.current.classList.remove("motion")
+        //         }
+        //     }
+        //     else{
+        //         setScreenBig(false)
+        //         if(window.scrollY > 0){
+        //             headerMobileRef.current.classList.add("scrolled")
+        //             lineRef.current.classList.add("motion")
+        //             lineRef2.current.classList.add("motion")
+        //         }
+        //         else{
+        //             headerMobileRef.current.classList.remove("scrolled")
+        //             lineRef.current.classList.remove("motion")
+        //             lineRef2.current.classList.remove("motion")
+        //         }
+        //     }
+        // })
     },[isScreenBig])
 
     async function getPlaylist(){
@@ -194,7 +194,7 @@ export default function Header({activeLink}) {
             </div>
             <div onClick={execsClick} className={'mobile-navbar-links' }>
                 <FontAwesomeIcon icon={faBriefcase} size="2lx" style={{color: "#000000"}} />
-                <span>Meet The Exes</span>
+                <span>Meet The Execs</span>
             </div>
             <div onClick={blogClick} className={'mobile-navbar-links' }>
                 <FontAwesomeIcon icon={faNewspaper} size="2lx" style={{color: "#000000"}} />
