@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, CSSProperties } from "react";
-import BarLoader from "react-spinners/BarLoader";
+import BounceLoader from "react-spinners/BounceLoader";
 
 
 export default function Loader() {
@@ -16,7 +16,7 @@ export default function Loader() {
     }
   return (
     <div className='loader' style={styleContainer}>
-        <BarLoader
+        <BounceLoader
             color={color}
             loading={loading}
             // cssOverride={override}

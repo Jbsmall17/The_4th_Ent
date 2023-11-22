@@ -132,8 +132,6 @@ export default function Header({activeLink}) {
                 <span className='hover-text'>Home</span>
                 <ul className='dropdown'>
                     <li onClick={()=>handleClick("#services")}>Services</li>
-                    <li onClick={()=>handleClick("#event")}>Event</li>
-                    <li onClick={()=>handleClick("#testimonials")}>Testimonial</li>
                 </ul>
             </li>
             <li onClick={artisteClick} className={page === "artiste" ? "active" : null} >
@@ -206,7 +204,7 @@ export default function Header({activeLink}) {
                 </div>
             </div>
             <div className='mobile-navbar-links'>
-                <FontAwesomeIcon  onClick={()=>{setMobileOpen(false)}} icon={faCircleXmark}  style={{color: "#e00f0f", fontSize: "40px"}}  />
+                <FontAwesomeIcon  onClick={()=>{setMobileOpen(false)}} icon={faCircleXmark}  style={{color: "#e00f0f", }}  />
             </div>
         </div>
         <div className='prompt' style={{display: cancel ? "none" : "block"}}>
