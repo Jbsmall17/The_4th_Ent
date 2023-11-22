@@ -1,12 +1,13 @@
 div.footer-container{
     padding-inline: 5%;
-    padding-block: 15px;
+    padding-block: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #ffa500;
-    background-color: #4b0082;
+    /* background-color: #4b0082; */
+    background-color: #000;
 }
 img.logo{
     width: 5.6rem;
@@ -38,8 +39,12 @@ div.footer-container-right > p{
     margin-block-end: 8px;
 }
 
+form.subscribe-form{
+    max-width: 400px;
+    width: 90vw
+}
 form.subscribe-form > div{
-    width: 300px;
+    width: 100%;
     height: 70px;
     position: relative;
 }
@@ -159,14 +164,13 @@ form.subscribe-form > div > input:focus{
 @media screen and (max-width:768px) {
     div.footer-container{
         padding-inline: 5%;
-        padding-block: 10px;
+        padding-block: 30px;
         display: flex;
         flex-direction: column;
         /* justify-content: space-between; */
-        gap: 20px;
+        gap: 30px;
         align-items: center;
         border-top: 2px solid #ffa500;
-        background-color: #4b0082;
     }
     div.footer-container-left{
         text-align: center;
@@ -176,6 +180,9 @@ form.subscribe-form > div > input:focus{
     }
     div.socials-container {
         margin-block-end: 16px;
+    }
+    div.footer-container-right{
+        text-align: center;
     }
     div.footer-container-right > p {
         margin-block-end: 16px;

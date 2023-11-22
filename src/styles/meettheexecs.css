@@ -1,6 +1,6 @@
 div.meet-the-execs-container{
     padding-block: 40px;
-    padding-inline: 100px;
+    /* padding-inline: 100px; */
 }
 
 div.meet-the-execs-container > p{
@@ -23,14 +23,14 @@ div.meet-the-execs-container > p{
 }
 
 div.execs-container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    place-content: center;
 }
 
 div.execs-container > div{
-    width : 300px;
+    /* width : 300px; */
     text-align : center;
 }
 

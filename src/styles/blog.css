@@ -3,13 +3,13 @@ div.blog-page-container{
     padding-block-end: 50px;
 }
 
-@media screen and (max-width: 769px) {
+/* @media screen and (max-width: 769px) {
     div.blog-page-container{
         padding-block: 15px;
         padding-inline: 0px;
         padding-block-end: 30px;
     }   
-}
+} */
 
 div.blog-page-container > p{
     text-align: center;    
@@ -33,11 +33,9 @@ div.blog-page-container > p{
 
 div.blog-container{
     display: flex;
-    margin: 0 auto;
-    max-width: 800px;
-    width: 90%;
     flex-direction: column;
-    align-items:stretch;
+    justify-content: center;
+    align-items:center;
     row-gap: 25px;
 }
 
@@ -46,12 +44,9 @@ div.blog-container > div{
     padding-inline: 1rem;
     background-color: rgba(255,255,255,0.9);
     color: #000;
-    /* border-width: 2px;
-    border-image: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
-    border-image-slice: 1;
-    border-image-width: 2px;
-    border-style: solid;
-    border-radius: 50px; */
+    z-index: 2;
+    max-width: 800px;
+    width: 90%;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -69,6 +64,7 @@ div.blog-container > div::before{
     border-image: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
     border-image-slice: 1;
     border-image-width: 4px;
+    z-index: -1;
 }
 
 div.blog-container > div > p:nth-of-type(1){
@@ -96,14 +92,10 @@ div.blog-container > div > p:nth-of-type(2){
     }
 }
 
-div.blog-container > div > p:nth-of-type(2) > a{
-    text-decoration: none;
+div.blog-container > div > p:nth-of-type(2) > button{
+    background-color: transparent;
+    border: none;
     color: teal;
     cursor: pointer;
-}
-
-div.blog-container > div > p:nth-of-type(2) > a:hover{
-    text-decoration: underline;
-    text-decoration-color: teal;
-    text-decoration-thickness: 2px;
+    font-size: 1rem;
 }

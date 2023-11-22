@@ -128,7 +128,7 @@ export default function Header({activeLink}) {
       <nav className='navbar-desktop'>
         <ul className='navbar-list'>
             <li onClick={homeClick} className={page === "home" ? "active" : null}>
-                <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ffa500" :"#ffffff"}} />
+                <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ffffff" :"#ffa500"}} />
                 <span className='hover-text'>Home</span>
                 <ul className='dropdown'>
                     <li onClick={()=>handleClick("#services")}>Services</li>
@@ -137,7 +137,7 @@ export default function Header({activeLink}) {
                 </ul>
             </li>
             <li onClick={artisteClick} className={page === "artiste" ? "active" : null} >
-                <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ffa500" :"#ffffff"}} />
+                <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ffffff" :"#ffa500"}} />
                 <span className='hover-text' >Artiste</span>
             </li>
             {/* <li  onClick={handleClick}>
@@ -145,11 +145,11 @@ export default function Header({activeLink}) {
                 <span className='hover-text' >Services</span>
             </li> */}
             <li onClick={execsClick} className={page === "execs" ? "active" : null}>
-                <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ffa500" : "#ffffff"}} />
-                <span className='hover-text' >Meet The Execs</span>
+                <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ffffff" :"#ffa500" }} />
+                <span className='hover-text' >The Execs</span>
             </li>
             <li onClick={blogClick} className={page === "bloggg" ? "active" : null} >
-                <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ffa500" : "#ffffff"}} />
+                <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ffffff" :"#ffa500"}} />
                 <span className='hover-text' >Blog</span>
             </li>
         </ul>
@@ -181,23 +181,23 @@ export default function Header({activeLink}) {
         </div>
         <div className={ isMobileOpen ? 'mobile-navbar open' : 'mobile-navbar'}>
             <div onClick={homeClick} className='mobile-navbar-links'>
-                <FontAwesomeIcon icon={faHouse} size="2xl" style={{color: "#000000"}} />
+                <FontAwesomeIcon icon={faHouse} style={{color: "#000000", fontSize: "40px"}} />
                 <span>Home</span>
             </div>
-            <div onClick={artisteClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faMusic} size="2lx" style={{color: "#fffff"}} />
-                <span>Artistes</span>
-            </div>
             <div  onClick={handleClick} className='mobile-navbar-links'>
-                <FontAwesomeIcon icon={faScrewdriverWrench} size="2xl" style={{color: "#ffffff"}} />
+                <FontAwesomeIcon icon={faScrewdriverWrench}  style={{color: "#ffffff", fontSize: "40px"}} />
                 <span>Services</span>
             </div>
+            <div onClick={artisteClick} className={'mobile-navbar-links' }>
+                <FontAwesomeIcon icon={faMusic} style={{color: "#fffff", fontSize: "40px"}} />
+                <span>Artistes</span>
+            </div>
             <div onClick={execsClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faBriefcase} size="2lx" style={{color: "#000000"}} />
-                <span>Meet The Execs</span>
+                <FontAwesomeIcon icon={faBriefcase} style={{color: "#000000", fontSize: "40px" }} />
+                <span>The Execs</span>
             </div>
             <div onClick={blogClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faNewspaper} size="2lx" style={{color: "#000000"}} />
+                <FontAwesomeIcon icon={faNewspaper} style={{color: "#000000", fontSize: "40px"}} />
                 <span>Blog</span>
             </div>
             <div className='mobile-navbar-links'>
@@ -206,7 +206,7 @@ export default function Header({activeLink}) {
                 </div>
             </div>
             <div className='mobile-navbar-links'>
-                <FontAwesomeIcon  onClick={()=>{setMobileOpen(false)}} icon={faCircleXmark} size="2lx" style={{color: "#e00f0f"}}  />
+                <FontAwesomeIcon  onClick={()=>{setMobileOpen(false)}} icon={faCircleXmark}  style={{color: "#e00f0f", fontSize: "40px"}}  />
             </div>
         </div>
         <div className='prompt' style={{display: cancel ? "none" : "block"}}>

@@ -6,6 +6,7 @@ import './App.css'
 import { Oval } from  'react-loader-spinner'
 import { postSubscriber } from "./backend/server"
 import toast, { Toaster } from 'react-hot-toast';
+import Loader from "./components/Loader"
 
 
 
@@ -129,7 +130,7 @@ function App() {
         <Route 
           index
           element={
-            <Suspense fallback={<div>Loading....</div>}>
+            <Suspense fallback={<Loader />}>
               <Home />
             </Suspense>
           }
@@ -138,7 +139,7 @@ function App() {
       <Route 
         path="/artiste"
         element={
-          <Suspense fallback={<div>Loading....</div>}>
+          <Suspense fallback={<Loader />}>
             <Artiste />
           </Suspense>
           }
@@ -147,7 +148,7 @@ function App() {
       <Route 
         path="/execs"
         element={
-          <Suspense fallback={<div>Loading....</div>}>
+          <Suspense fallback={<Loader />}>
             <MeetTheExecs />
           </Suspense>
           }
@@ -158,7 +159,7 @@ function App() {
         <Route 
           path="/blog"
           element={
-            <Suspense fallback={<div>Loading....</div>}>
+            <Suspense fallback={<Loader />}>
               <Blog />
             </Suspense>
             }

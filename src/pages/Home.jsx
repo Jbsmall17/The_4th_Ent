@@ -38,29 +38,6 @@ export default function Home() {
   const the4thDiv = useRef()
   const servicesRef = useRef(null)
 
-  function mouseMoveHandler(e){
-    const homeDivNode = homeDiv.current;
-    const the4thDivNode = the4thDiv.current
-    const cursorX = e.clientX;
-    const cursorY = e.clientY;
-
-    const homeDivNodeLeft = homeDivNode.getBoundingClientRect().left
-    const homeDivNodeTop = homeDivNode.getBoundingClientRect().top
-    let NewcursorX 
-    let NewCursorY 
-    
-    the4thDivNode.classList.add("appear")
-      NewcursorX =  cursorX - homeDivNodeLeft
-      NewCursorY = cursorY - homeDivNodeTop
-
-    the4thDivNode.style.top = `${NewCursorY}px`;
-    the4thDivNode.style.left = `${NewcursorX}px`;
-  }
-
-  function mouseLeaveHandler(){
-    const the4thDivNode = the4thDiv.current
-    the4thDivNode.classList.remove("appear")
-  }
 
 async function getEvent(){
   const response = await fetchEvent()
@@ -83,17 +60,6 @@ function handleClick(section){
     getEvent()
   },[])
 
-  useEffect(()=>{
-    const homeDivNode = homeDiv.current
-
-    homeDivNode.addEventListener("mousemove", mouseMoveHandler)
-    homeDivNode.addEventListener("mouseleave", mouseLeaveHandler)
-    return ()=>{
-      homeDivNode.removeEventListener("mousemove", mouseMoveHandler)
-      homeDivNode.removeEventListener("mouseleave", mouseLeaveHandler)
-    }
-  },[])
-
   useEffect(() => {
     AOS.init();
   }, [])
@@ -102,8 +68,8 @@ function handleClick(section){
     <>
       <Header  activeLink={"home"}/>
       <div ref={homeDiv} className='homepage'>
-        <p className='slogan' >THE MEDIA HUB</p>
-        <p className='slogan1'>THE BEST AT WHAT WE DO</p>
+        {/* <p className='slogan' >THE MEDIA HUB</p>
+        <p className='slogan1'>THE BEST AT WHAT WE DO</p> */}
         {/* <div onClick={()=>handleClick("#services")} className='theent' ref={the4thDiv} >
           <span>The</span><span>4th</span> <span>Ent.</span>
         </div> */}
@@ -165,40 +131,36 @@ function handleClick(section){
         <h3>WHAT WE DO!!</h3>
         <div className='services-container'>
           <Services 
-            name={"Talent Management"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
-          />
-          <Services 
-            name={"Music Business"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
-          />
-          <Services 
-            name={"Creative Develoment"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
-          />
-          <Services 
-            name={"Branding"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
-          />
-          <Services 
             name={"Music Distribution"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
-          />
-          <Services 
-            name={"Events Management"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
+            desc={"Immerse your music in our Music Distribution service, ensuring wide-reaching presence and unprecedented accessibility. We provide artists and content creators with a seamless gateway to a global audience hungry for exceptional tunes."}
           />
           <Services 
             name={"Playlisting"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
+            desc={"Step into the world of Playlisting, where we meticulously curate and passionately promote playlists. These playlists are designed not just to captivate but to elevate your music, strategically increasing exposure and engagement for an enduring impact on your audience."}
           />
           <Services 
-            name={"Promotion"}
-            desc={"Eiusmod consequat ex sit commodo amet.Dolore qui dolor labore dolor minim quis do aliquip do adipisicing."}
+            name={"Talent Management"}
+            desc={"Embark on a transformative journey with our comprehensive Talent Management expertise. We go beyond representation to guide and sculpt artists' careers with an unwavering commitment to success, fostering growth and unlocking their full potential."}
+          />
+          <Services 
+            name={"Events Management"}
+            desc={"Experience the magic of Events Management as we bring your music and entertainment dreams to life. We meticulously organize and flawlessly execute unforgettable events that resonate with your audience long after the last note fades."}
+          />
+          <Services 
+            name={"Visual Content Management"}
+            desc={"Elevate your visual storytelling with our Visual and Creative Content Management service. In this realm, captivating visuals for artists and brands are expertly crafted to leave an indelible imprint on the hearts and minds of your audience."}
+          />
+          <Services 
+            name={"A&R Services"}
+            desc={"Delve into the future of music with our A&R Services, skillfully identifying and nurturing emerging talent. We shape the industry's next wave of groundbreaking artists, ensuring a continuous evolution of musical excellence."}
+          />
+          <Services 
+            name={"Marketing and Branding"}
+            desc={"Let your brand resonate with authenticity and power through our Marketing and Branding expertise. We tailor effective strategies and construct robust brand identities that not only stand out in the competitive landscape but also ensure your music and entertainment endeavors are not just seen but remembered."}
           />
         </div>
       </div>
-      <div className='event-container' id='event'>
+      {/* <div className='event-container' id='event'>
         <h3>Our Event</h3>
           <div className='event' data-aos="fade-left" data-aos-duration="2000">
             <div className='event-date'>11/05/23</div>
@@ -239,8 +201,8 @@ function handleClick(section){
               <FontAwesomeIcon icon={faArrowRight} rotation={45} />
             </div>
           </div>
-      </div>
-      <Testimonials />
+      </div> */}
+      {/* <Testimonials /> */}
       <Footer />
     </>
   )

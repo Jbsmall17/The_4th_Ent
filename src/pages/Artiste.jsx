@@ -21,7 +21,7 @@ export default function Artiste() {
                   <img alt='artiste picture' src={artiste} data-aos="flip-left" data-aos-duration="2000" />
                 </div>
                 <p className='artiste-name'>Emaxee</p>
-                <a href='#'><p className='artiste-link'>Listen on Spotify</p></a>
+                <a href='https://linktr.ee/emaxee' target='_blank'><p className='artiste-link'>Listen </p></a>
               </div>
             </div>
         </div>

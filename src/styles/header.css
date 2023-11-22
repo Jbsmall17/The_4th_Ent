@@ -19,7 +19,9 @@ header.mobile-header{
     padding-inline: 5%;
     padding-block: 10px;
     z-index: 3;
-    background-color: #4b0082;
+    border-bottom: 1.5px solid #ffa500;
+    /* background-color: #4b0082; */
+    background-color: #000;
 }
 /* header.mobile-header.scrolled{
   background-color: #008080 ;
@@ -197,7 +199,8 @@ div.prompt > svg{
         justify-content: center;
         align-items: center;
         border-bottom: 1.5px solid #ffa500;
-        background-color: #4b0082; 
+        /* background-color: #4b0082;  */
+        background-color: #000;
         position: relative;
         z-index: 3;
     }
@@ -239,7 +242,7 @@ div.prompt > svg{
         font-weight: 600;
         height: 4.5rem;
         border-radius: 50%;
-        border: 2px dashed #fff;
+        border: 2px dashed #ffa500;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -248,7 +251,7 @@ div.prompt > svg{
         /* transition: all ease 0.5s; */
     }
     ul.navbar-list > li.active{
-      border: 2px dashed #ffa500;
+      border: 2px dashed #fff;
       
     }
     ul.dropdown{
@@ -277,8 +280,8 @@ div.prompt > svg{
       visibility: visible;
     }
     ul.navbar-list > li.active:hover .hover-text{
-      background-color: #ffa500;
-      color: #fff;
+      background-color: #fff;
+      color: #ffa500;
     }
     ul.navbar-list > li  span{
         display: none;
@@ -292,8 +295,8 @@ div.prompt > svg{
         font-size: 12px;
         top:50%;
         left:50%;
-        background-color: #fff;
-        color: #000;
+        background-color: #ffa500;
+        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
