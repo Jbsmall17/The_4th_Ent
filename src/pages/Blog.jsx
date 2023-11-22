@@ -4,13 +4,12 @@ import Footer from '../components/Footer'
 import "../styles/blog.css"
 import BlogPost from '../components/BlogPost'
 import {fetchBlog} from "../backend/server"
-import ClipLoader from "react-spinners/ClipLoader"; 
+import { TailSpin  } from  'react-loader-spinner'
+// import ClipLoader from "react-spinners/ClipLoader"; 
 
 
 export default function Blog() {
-    const [loading, setLoading] = useState(true);
-    const [color, setColor] = useState("#ffa500");
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const [blogs, setBlogs] = useState([])
     async function getBlog(){
         setIsLoading(true)
@@ -27,7 +26,7 @@ export default function Blog() {
         <Header activeLink={"bloggg"} />
             <div className='blog-page-container'>
                 <p>Blog</p>
-                <div className='blog-container'>
+                <div className={isLoading ? 'blog-container' :  'blog-container loaded'}>
                     { 
                         !isLoading
                         ?
@@ -39,14 +38,15 @@ export default function Blog() {
                                     />
                         })
                         : (
-                            <ClipLoader
-                                color={color}
-                                loading={loading}
-                                // cssOverride={override}
-                                size={150}
-                                aria-label="Loading Spinner"
-                                data-testid="loader"
-                            />
+                            <TailSpin
+                                height="150"
+                                width="150"
+                                color="#ffa500"
+                                ariaLabel="tail-spin-loading"
+                                radius="1"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                            />                            
                         )
                     }
                     {/* <BlogPost 

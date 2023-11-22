@@ -39,7 +39,7 @@ div.blog-container{
     row-gap: 25px;
 }
 
-div.blog-container > div{
+div.blog-container.loaded > div{
     padding-block: 1rem;
     padding-inline: 1rem;
     background-color: rgba(255,255,255,0.9);
