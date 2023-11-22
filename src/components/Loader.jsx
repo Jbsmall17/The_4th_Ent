@@ -1,11 +1,8 @@
 import React from 'react'
-import { useState, CSSProperties } from "react";
-import BounceLoader from "react-spinners/BounceLoader";
+import { InfinitySpin  } from  'react-loader-spinner'
 
 
 export default function Loader() {
-    let [loading, setLoading] = useState(true);
-    let [color, setColor] = useState("#ffa500");
 
     const styleContainer = {
         display : "flex",
@@ -16,14 +13,10 @@ export default function Loader() {
     }
   return (
     <div className='loader' style={styleContainer}>
-        <BounceLoader
-            color={color}
-            loading={loading}
-            // cssOverride={override}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-        />
+       <InfinitySpin 
+            width = "200"
+            color = '#ffa500'
+       />
     </div>
   )
 }
