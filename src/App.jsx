@@ -86,7 +86,7 @@ function App() {
       { modal &&
       <div className="modal-container">
         <div className="modal">
-          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#4b0082"}} />
+          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#ffa500"}} />
           <p>Signup to Our Newsletter</p>
           <p>be part of a community of Music Enthusiast</p>
           <form onSubmit={postEmail}>
@@ -120,7 +120,7 @@ function App() {
           </form>
           <FontAwesomeIcon 
             icon={faXmark} size="lg" 
-            style={{color : "#008080"}}className="svg-cancel"
+            style={{color : "#000"}}className="svg-cancel"
             onClick={()=> setModal(false)}  
           />
         </div>
@@ -128,7 +128,7 @@ function App() {
       }
       <Routes >
         <Route 
-          index
+          path="/"
           element={
             <Suspense fallback={<Loader />}>
               <Home />

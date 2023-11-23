@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
 
 div.homepage{
     width: 100%;
@@ -114,6 +115,7 @@ div.event-main > svg{
 
 div.homepage > p.title{
     position: absolute;
+    font-family: 'Dancing Script', cursive;
     top:50%;
     left:50%;
     opacity: 0.85;
@@ -124,7 +126,6 @@ div.homepage > p.title{
     overflow: hidden;
     z-index: 2;
     white-space: nowrap;
-    font-family: 'Roboto Condensed', sans-serif;
     /* width: 500px; */
     border-right: 2px solid white; 
     /* animation: typing 3s steps(22) infinite; */

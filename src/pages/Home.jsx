@@ -125,7 +125,7 @@ function handleClick(section){
             <img className='slide-img' alt='picture 13' src={picture13}></img>
           </SwiperSlide>
         </Swiper>
-        <p className='title'>The 4th Entertainment</p>
+        {/* <p className='title'>The 4th Entertainment</p> */}
       </div>
       <div className='home-services' id="services" ref={servicesRef}>
         <h3>WHAT WE DO!!</h3>

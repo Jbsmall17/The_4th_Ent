@@ -12,12 +12,12 @@ export default function MeetTheExecs() {
         <div className='meet-the-execs-container'>
             <p>Meet The Execs</p>
             <div className='execs-container'>
-                <Execs name={"Rafiq Olayinka Salis"} position={"Founder"}/>
-                <Execs name={"Derek Okorosobo"} position={"Socialite"} />
-                <Execs name={"Oyedeji Komolafe"} position={"C.E.O"} />
-                <Execs name={"Yusuf Obituga Opeoluwa"} position={"C.E.O"} />
-                <Execs name={"Dennis Ekundayo"} position={"C.E.O"} />
-                <Execs name={"Ahmed Adebayo Adedamola"} position={"C.E.O"} />
+                <Execs name={"Rafiq Olayinka Salis"} position={"C.E.O, Head Of Talent Management"}/>
+                <Execs name={"Derek Okorosobo"} position={"Head of Social Operations"} />
+                <Execs name={"Oyedeji Komolafe"} position={"Head of Digitial Media and Operations"} />
+                <Execs name={"Yusuf Obituga Opeoluwa"} position={"A&R, DJ and Executive Producer"} />
+                <Execs name={"Dennis Ekundayo"} position={"COO, Head of A&R"} />
+                <Execs name={"Ahmed Adebayo Adedamola"} position={"Creative Writer"} />
             </div>
         </div>
         <Footer />

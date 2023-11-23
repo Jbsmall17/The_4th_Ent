@@ -82,35 +82,6 @@ export default function Header({activeLink}) {
         const headerRefnode =  headerRef.current
         const navOffset = headerRefnode.getBoundingClientRect().height
         setNavbarHeight(navOffset)
-        // window.addEventListener("scroll",()=>{
-        //     // console.log(window.scrollY, contentHeight, estimatedThumbHeight, window.innerHeight)
-        //     if( window.innerWidth >= 768){
-        //         setScreenBig(true)
-        //         if(window.scrollY > 0){
-        //             headerRef.current.classList.add("scrolled")
-        //             lineRef.current.classList.add("motion")
-        //             lineRef2.current.classList.add("motion")
-        //         }
-        //         else{
-        //             headerRef.current.classList.remove("scrolled")
-        //             lineRef.current.classList.remove("motion")
-        //             lineRef2.current.classList.remove("motion")
-        //         }
-        //     }
-        //     else{
-        //         setScreenBig(false)
-        //         if(window.scrollY > 0){
-        //             headerMobileRef.current.classList.add("scrolled")
-        //             lineRef.current.classList.add("motion")
-        //             lineRef2.current.classList.add("motion")
-        //         }
-        //         else{
-        //             headerMobileRef.current.classList.remove("scrolled")
-        //             lineRef.current.classList.remove("motion")
-        //             lineRef2.current.classList.remove("motion")
-        //         }
-        //     }
-        // })
     },[isScreenBig])
 
     async function getPlaylist(){
@@ -123,19 +94,18 @@ export default function Header({activeLink}) {
   return (
     <>
     <header className='header' ref={headerRef}>
-        {/* <div className='line' ref={lineRef}></div> */}
         <img onClick={homeClick} style={{cursor : "pointer"}} src={Logo} className='logo' alt='4th entertainment website' />
       <nav className='navbar-desktop'>
         <ul className='navbar-list'>
             <li onClick={homeClick} className={page === "home" ? "active" : null}>
-                <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ffffff" :"#ffa500"}} />
+                <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ffa500" :"#ffffff"}} />
                 <span className='hover-text'>Home</span>
                 <ul className='dropdown'>
                     <li onClick={()=>handleClick("#services")}>Services</li>
                 </ul>
             </li>
             <li onClick={artisteClick} className={page === "artiste" ? "active" : null} >
-                <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ffffff" :"#ffa500"}} />
+                <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ffa500" :"#ffffff"}} />
                 <span className='hover-text' >Artiste</span>
             </li>
             {/* <li  onClick={handleClick}>
@@ -143,11 +113,11 @@ export default function Header({activeLink}) {
                 <span className='hover-text' >Services</span>
             </li> */}
             <li onClick={execsClick} className={page === "execs" ? "active" : null}>
-                <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ffffff" :"#ffa500" }} />
+                <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ffa500" :"#ffffff" }} />
                 <span className='hover-text' >The Execs</span>
             </li>
             <li onClick={blogClick} className={page === "bloggg" ? "active" : null} >
-                <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ffffff" :"#ffa500"}} />
+                <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ffa500" :"#ffffff"}} />
                 <span className='hover-text' >Blog</span>
             </li>
         </ul>
@@ -156,7 +126,7 @@ export default function Header({activeLink}) {
             <p>Playlist</p>
             <span className='hover-text'>playlist</span>
         </button>
-        <div className='prompt' style={{display: cancel ? "none" : "block"}}>
+        {/* <div className='prompt' style={{display: cancel ? "none" : "block"}}>
             <div>
                 <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
                 <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
@@ -169,7 +139,7 @@ export default function Header({activeLink}) {
                 icon={faXmark} style={{color: "#000000"}} 
                 onClick={()=> setCancel(true)}      
             />
-        </div>
+        </div> */}
     </header>
     <header className='mobile-header' ref={headerMobileRef} >
         <div className='line' ref={lineRef2}></div>
@@ -179,23 +149,23 @@ export default function Header({activeLink}) {
         </div>
         <div className={ isMobileOpen ? 'mobile-navbar open' : 'mobile-navbar'}>
             <div onClick={homeClick} className='mobile-navbar-links'>
-                <FontAwesomeIcon icon={faHouse} style={{color: "#000000", fontSize: "40px"}} />
+                <FontAwesomeIcon icon={faHouse} style={{color: "#ffa500", fontSize: "40px"}} />
                 <span>Home</span>
             </div>
             <div  onClick={handleClick} className='mobile-navbar-links'>
-                <FontAwesomeIcon icon={faScrewdriverWrench}  style={{color: "#ffffff", fontSize: "40px"}} />
+                <FontAwesomeIcon icon={faScrewdriverWrench}  style={{color: "#000", fontSize: "40px"}} />
                 <span>Services</span>
             </div>
             <div onClick={artisteClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faMusic} style={{color: "#fffff", fontSize: "40px"}} />
+                <FontAwesomeIcon icon={faMusic} style={{color: "#000", fontSize: "40px"}} />
                 <span>Artistes</span>
             </div>
             <div onClick={execsClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faBriefcase} style={{color: "#000000", fontSize: "40px" }} />
+                <FontAwesomeIcon icon={faBriefcase} style={{color: "#ffa500", fontSize: "40px" }} />
                 <span>The Execs</span>
             </div>
             <div onClick={blogClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faNewspaper} style={{color: "#000000", fontSize: "40px"}} />
+                <FontAwesomeIcon icon={faNewspaper} style={{color: "#ffa500", fontSize: "40px"}} />
                 <span>Blog</span>
             </div>
             <div className='mobile-navbar-links'>
@@ -207,7 +177,7 @@ export default function Header({activeLink}) {
                 <FontAwesomeIcon  onClick={()=>{setMobileOpen(false)}} icon={faCircleXmark}  style={{color: "#e00f0f", }}  />
             </div>
         </div>
-        <div className='prompt' style={{display: cancel ? "none" : "block"}}>
+        {/* <div className='prompt' style={{display: cancel ? "none" : "block"}}>
             <div>
                 <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
                 <a href='javascript:void(0)'>Click here to tune in to this week's playlist.</a>
@@ -218,7 +188,7 @@ export default function Header({activeLink}) {
                 icon={faXmark} style={{color: "#000000"}} 
                 onClick={()=> setCancel(true)}      
             />
-        </div>
+        </div> */}
     </header>
     
     </>
