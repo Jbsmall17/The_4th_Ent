@@ -19,7 +19,8 @@ div.footer-container-left > img{
 div.socials-container{
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    /* gap: 12px; */
+    justify-content: space-between;
     margin-block-end: 8px;
     cursor: pointer;
 }
@@ -90,12 +91,12 @@ p.form-icon-container2{
 }
 
 p.form-icon-container > .subscribe, p.form-icon-container > .arrow1{
-    transform: translateY(-115%);
+    transform: translateY(-120%);
     animation: moveup3 0.5s ease 1 forwards;
 }
 @keyframes moveup3 {
     from{
-        transform: translateY(-115%);
+        transform: translateY(-120%);
     }
     to{
         transform: translateY(0);
@@ -110,7 +111,7 @@ p.form-icon-container:hover .subscribe, p.form-icon-container:hover .arrow1{
         transform: translateY(0);
     }
     to{
-        transform: translateY(-115%);
+        transform: translateY(-120%);
     }
 }
 p.form-icon-container:hover .form-icon-container2{

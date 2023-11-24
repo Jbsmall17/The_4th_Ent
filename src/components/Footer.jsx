@@ -54,8 +54,8 @@ export default function Footer() {
                     >
                       <FaSquareXTwitter size={"2em"} style={{color: "#fff"}}/>
                     </a>
-                    <FaFacebookF size={"2em"} />
-                    <FaPinterestP size={"2em"} />
+                    {/* <FaFacebookF size={"2em"} /> */}
+                    {/* <FaPinterestP size={"2em"} /> */}
                     <a 
                       href='https://www.linkedin.com/company/the4thmediaandentertainment/'
                       target='_blank'  
