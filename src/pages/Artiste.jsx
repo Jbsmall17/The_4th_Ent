@@ -5,6 +5,7 @@ import artiste from "../assets/artiste.jpeg"
 import "../styles/artiste.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Playlist from '../components/Playlist'
 
 export default function Artiste() {
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function Artiste() {
               </div>
             </div>
         </div>
+        <Playlist />
         <Footer />
     </div>
   )

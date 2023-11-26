@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Execs from '../components/Execs'
 import Footer from '../components/Footer'
 import "../styles/meettheexecs.css"
+import Playlist from '../components/Playlist'
 
 
 export default function MeetTheExecs() {
@@ -20,6 +21,7 @@ export default function MeetTheExecs() {
                 <Execs name={"Ahmed Adebayo Adedamola"} position={"Creative Writer"} />
             </div>
         </div>
+        <Playlist />
         <Footer />
     </div>
   )

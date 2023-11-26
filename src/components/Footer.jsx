@@ -81,10 +81,10 @@ export default function Footer() {
                           <button type='submit'  className='subscribe'> 
                           sign up
                           </button>
-                          <FaArrowRight  className='arrow1'/>
+                          {/* <FaArrowRight  className='arrow1'/> */}
                           <p className='form-icon-container2'>
                             <button type='submit'  className='subscribe2'>sign up</button>
-                            <FaArrowRight  className='arrow2'/>
+                            {/* <FaArrowRight  className='arrow2'/> */}
                           </p>
                         </p>
                     </div>

@@ -27,8 +27,8 @@ div.socials-container{
 p.coypright{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    gap:1rem;
 }
 p.coypright > span{
     font-size: 16px;
@@ -83,7 +83,7 @@ p.form-icon-container2{
     top:0;
     left:0;
     z-index: 11;
-    transform: translateY(100%);
+    transform: translateY(120%);
     display: flex;
     flex-direction: row;
     gap:5px;
@@ -119,7 +119,7 @@ p.form-icon-container:hover .form-icon-container2{
 }
 @keyframes moveup2 {
     from{
-        transform: translateY(100%);
+        transform: translateY(120%);
     }
     to{
         transform: translateY(0);

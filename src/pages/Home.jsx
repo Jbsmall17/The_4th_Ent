@@ -18,16 +18,19 @@ import picture11 from "../assets/picture11.jpeg"
 import picture12 from "../assets/picture12.jpeg"
 import picture13 from "../assets/picture13.jpeg"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay, Keyboard, EffectFade } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+import 'swiper/css/keyboard';
+import 'swiper/css/effect-fade';
 import {fetchEvent} from "../backend/server.js"
 import { useNavigate } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Playlist from '../components/Playlist.jsx'
 
 
 
@@ -74,14 +77,15 @@ function handleClick(section){
           <span>The</span><span>4th</span> <span>Ent.</span>
         </div> */}
         <Swiper
-          modules={[Autoplay, Navigation]}
+          modules={[Autoplay, Navigation, Keyboard, EffectFade]}
           spaceBetween={50}
           slidesPerView={1}
           navigation
+          keyboard
+          effect="fade"
           autoplay={
             {
               delay: 3000,
-  
             }
           }
         >
@@ -203,6 +207,7 @@ function handleClick(section){
           </div>
       </div> */}
       {/* <Testimonials /> */}
+      <Playlist />
       <Footer />
     </>
   )

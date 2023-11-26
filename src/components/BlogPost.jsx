@@ -16,7 +16,7 @@ export default function BlogPost({title,desc}) {
           !fulldesc
           ?
           <p>{`${desc.substring(0,100)}...`}<button onClick={()=> setFullDesc(true)}>Readmore</button></p>
-          : <p>{desc} <button onClick={()=> setFullDesc(false)}>showless</button></p>
+          : <p>{desc} <button onClick={()=> setFullDesc(false)}>Showless</button></p>
         }
     </div>
   )
