@@ -137,7 +137,7 @@ export default function Header({activeLink}) {
     <header className='mobile-header' ref={headerMobileRef} >
         <div className='line' ref={lineRef2}></div>
         <div className='mobile-header-container' >
-            <HiBars3BottomLeft onClick={()=>{setMobileOpen(true)}} color='ffa500' size="3.5em"/>
+            <HiBars3BottomLeft onClick={()=>{setMobileOpen(true)}} style={{color:'#ff4d14'}} size="3.5em"/>
             <img onClick={homeClick} style={{cursor: "pointer"}} src={Logo} className='mobile-logo' alt='The 4th Ent logo' />
         </div>
         <div className={ isMobileOpen ? 'mobile-navbar open' : 'mobile-navbar'}>

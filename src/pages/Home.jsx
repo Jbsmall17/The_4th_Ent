@@ -79,7 +79,7 @@ function handleClick(){
         <IoIosArrowDown onClick={handleClick} />
       </div>
       <div className='home-services' id="services" ref={servicesRef}>
-        <h3>WHAT WE DO!!</h3>
+        <h3>WHAT WE DO</h3>
         <div className='services-container'>
           <Services 
             name={"Music Distribution"}
