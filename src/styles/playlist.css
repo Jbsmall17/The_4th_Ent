@@ -1,11 +1,21 @@
 div.playlist{
     /* padding: 50px 50px; */
     width: 100%;
-    background: linear-gradient( 45deg, #ffbe07 35%, #ff2c18 65%);
+    background: linear-gradient( 45deg, #0c4cb0 35%, #Bf6ae3 65%);
     height: 15rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+div.playlist > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.playlist > div > a{
+    text-decoration: none;
 }
 
 div.playlist > div > p{
@@ -14,7 +24,9 @@ div.playlist > div > p{
     margin-bottom: 1rem;
 }
 
-div.playlist > div > button{
+
+
+div.playlist > div  button{
     display: block;
     margin: 0 auto;
     padding: 15px 50px;
@@ -28,18 +40,21 @@ div.playlist > div > button{
     transition: all ease 0.5s;
 }
 
-div.playlist > div > button:hover{
+div.playlist > div  button:hover{
     background: transparent;
     border: 2px solid #3498db;
 }
 
 @media screen and (max-width: 768px) {
+    div.playlist{
+        height: 12rem;
+    }
     div.playlist > div > p{
         font-size: 1.5rem;
         /* font-weight: 600; */
         margin-bottom: 1rem;
     }
-   div.playlist > div > button{
+   div.playlist > div  button{
         display: block;
         margin: 0 auto;
         padding: 10px 40px;
@@ -53,13 +68,16 @@ div.playlist > div > button:hover{
     }    
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
+    div.playlist{
+        height: 10rem;
+    }
     div.playlist > div > p{
         font-size: 1rem;
         /* font-weight: 600; */
         margin-bottom: 0.75rem;
     }
-   div.playlist > div > button{
+   div.playlist > div  button{
         display: block;
         margin: 0 auto;
         padding: 10px 40px;

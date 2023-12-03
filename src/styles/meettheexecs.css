@@ -7,7 +7,7 @@ div.meet-the-execs-container > p{
     text-align: center;    
     font-size: 48px;
     font-weight: 600;
-    background: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
+    background: linear-gradient( 45deg, #ffe103 30%, #ff4d14 70%);
     font-family: 'Roboto Condensed', sans-serif;
     color: transparent;
     -webkit-background-clip: text;
@@ -50,7 +50,7 @@ div.execs-container > div > div > img{
 div.execs-container > div > p:nth-of-type(1){
     font-size: 24px;
     margin-block: 0.5rem;
-    background: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
+    background: linear-gradient( 45deg, #ffe103 30%, #ff4d14 70%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;

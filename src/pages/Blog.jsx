@@ -42,7 +42,7 @@ export default function Blog() {
                             <TailSpin
                                 height="150"
                                 width="150"
-                                color="#ffa500"
+                                color="#ff4d14"
                                 ariaLabel="tail-spin-loading"
                                 radius="1"
                                 wrapperStyle={{}}

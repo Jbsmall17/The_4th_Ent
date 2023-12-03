@@ -9,7 +9,23 @@ div.homepage{
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    
+}
+
+div.homepage > video{
+    width: 100vw; /* 100% of viewport width */
+    height: 100vh; /* 80% of viewport height */
+    object-fit: cover;
+    display: block; 
+    margin: auto;
+}
+
+div.homepage > svg{
+    position: absolute;
+    bottom: 20%;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    cursor: pointer;
 }
 
 /* div.homepage{
@@ -43,7 +59,7 @@ div.event-date{
     left:50%;
     transform: translateX(-50%) translateY(-55%);
     background: #000;
-    color: #ffa500;
+    color: #ff4d14;
     padding: 0.5rem;
     padding-inline: 1rem;
     font-size: 24px;
@@ -121,7 +137,7 @@ div.homepage > p.title{
     opacity: 0.85;
     transform: translateX(-50%) translateY(-50%);
     font-size: 60px;
-    color: #ffa500;
+    color: #ff4d14;
     font-weight: 700;
     overflow: hidden;
     z-index: 2;
@@ -153,7 +169,7 @@ img.slide-img{
 }
 
 .swiper-button-next:after, .swiper-rtl, .swiper-button-prev:after{
-    color: #ffa500;
+    color: #ff4d14;
 }
 div.home-services{
     padding: 50px 50px;
@@ -164,7 +180,7 @@ div.testimonials > h3 {
     text-align: center;
     font-size: 48px;
     font-weight: 600;
-    background: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
+    background: linear-gradient( 45deg, #ffe103 30%, #ff4d14 70%);
     font-family: 'Roboto Condensed', sans-serif;
     color: transparent;
     -webkit-background-clip: text;
@@ -310,7 +326,7 @@ div.theent{
     top:30%;
     left:30%;
     border-radius: 50%;
-    background: linear-gradient( 45deg, #ff2c18 35%,#ffbe07 65%);
+    background: linear-gradient( 45deg, #ff3103 35%,#ff4d14 65%);
     transform: translateX(-50%) translateY(-50%) scale(1);
     color: #fff;
     font-size: 10px;

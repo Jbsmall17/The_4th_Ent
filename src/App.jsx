@@ -5,8 +5,10 @@ import { faEnvelope, faXmark, faCircleArrowUp } from '@fortawesome/free-solid-sv
 import './App.css'
 import { Oval } from  'react-loader-spinner'
 import { postSubscriber } from "./backend/server"
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import toast, { Toaster } from 'react-hot-toast';
 import Loader from "./components/Loader"
+import ModalForm from "./components/ModalForm"
 
 
 
@@ -16,6 +18,8 @@ const MeetTheExecs = lazy(()=> import("./pages/MeetTheExecs"))
 const Blog = lazy(()=> import("./pages/Blog"))
 
 const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const endpoint = import.meta.env.VITE_ENDPOINT
 
 function App() {
   const [count, setCount] = useState(0)
@@ -86,10 +90,29 @@ function App() {
       { modal &&
       <div className="modal-container">
         <div className="modal">
-          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#ffa500"}} />
+          <FontAwesomeIcon icon={faEnvelope} size="3x" beatFade style={{color : "#ff4d14"}} />
           <p>Signup to Our Newsletter</p>
           <p>be part of a community of Music Enthusiast</p>
-          <form onSubmit={postEmail}>
+          <MailchimpSubscribe
+            url={endpoint}
+            render={({ subscribe, status, message }) => (
+              <>
+              <ModalForm
+                message={message}
+                status={status}
+                onValidated={formData => subscribe(formData)}
+              />
+               { status=== "success" && message === "Thank you for subscribing!" ? <p className="success">subscription succesful</p> 
+                : status=== "success" && message === "You're already subscribed, your profile has been updated. Thank you!"
+                ? <p className="pending">email already exist</p>
+                : status === "error"
+                ? <p className="error">An error occurred, try again</p>
+                : <></>
+              }
+              </>
+            )}
+          />
+          {/* <form onSubmit={postEmail}>
             <input 
               type="text" 
               placeholder="email" 
@@ -117,7 +140,7 @@ function App() {
             )
             }
             </button>
-          </form>
+          </form> */}
           <FontAwesomeIcon 
             icon={faXmark} size="lg" 
             style={{color : "#000"}}className="svg-cancel"
@@ -137,7 +160,7 @@ function App() {
         />
 
       <Route 
-        path="/artiste"
+        path="/talent"
         element={
           <Suspense fallback={<Loader />}>
             <Artiste />

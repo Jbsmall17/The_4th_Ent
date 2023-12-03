@@ -5,7 +5,7 @@ import { faMusic,faNewspaper,faCircleXmark,faHouse, faScrewdriverWrench, faBrief
 import "../styles/header.css";
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { useNavigate } from 'react-router-dom';
-import { fetchPlaylist } from '../backend/server';
+// import { fetchPlaylist } from '../backend/server';
 import { Oval } from  'react-loader-spinner'
 
 
@@ -37,7 +37,7 @@ export default function Header({activeLink}) {
     
     function artisteClick(){
         setPage("artiste")
-        navigate("/artiste")
+        navigate("/talent")
         window.scrollTo({ 
             top: 0,
             left: 0,
@@ -84,13 +84,6 @@ export default function Header({activeLink}) {
         setNavbarHeight(navOffset)
     },[isScreenBig])
 
-    async function getPlaylist(){
-        const reponse = await fetchPlaylist()
-        console.log(reponse)
-    }
-    useEffect(()=>{
-        getPlaylist()
-    },[])
   return (
     <>
     <header className='header' ref={headerRef}>
@@ -98,26 +91,26 @@ export default function Header({activeLink}) {
       <nav className='navbar-desktop'>
         <ul className='navbar-list'>
             <li onClick={homeClick} className={page === "home" ? "active" : null}>
-                <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ffa500" :"#ffffff"}} />
+                <FontAwesomeIcon icon={faHouse} size="xl" style={{color: page === "home"? "#ff4d14" :"#ffffff"}} />
                 <span className='hover-text'>Home</span>
                 <ul className='dropdown'>
                     <li onClick={()=>handleClick("#services")}>Services</li>
                 </ul>
             </li>
             <li onClick={artisteClick} className={page === "artiste" ? "active" : null} >
-                <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ffa500" :"#ffffff"}} />
-                <span className='hover-text' >Artiste</span>
+                <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ff4d14" :"#ffffff"}} />
+                <span className='hover-text' >Talent</span>
             </li>
             {/* <li  onClick={handleClick}>
                 <FontAwesomeIcon icon={faScrewdriverWrench} size="xl" style={{color: "#ffffff",}} />
                 <span className='hover-text' >Services</span>
             </li> */}
             <li onClick={execsClick} className={page === "execs" ? "active" : null}>
-                <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ffa500" :"#ffffff" }} />
+                <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ff4d14" :"#ffffff" }} />
                 <span className='hover-text' >The Execs</span>
             </li>
             <li onClick={blogClick} className={page === "bloggg" ? "active" : null} >
-                <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ffa500" :"#ffffff"}} />
+                <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ff4d14" :"#ffffff"}} />
                 <span className='hover-text' >Blog</span>
             </li>
         </ul>
@@ -149,7 +142,7 @@ export default function Header({activeLink}) {
         </div>
         <div className={ isMobileOpen ? 'mobile-navbar open' : 'mobile-navbar'}>
             <div onClick={homeClick} className='mobile-navbar-links'>
-                <FontAwesomeIcon icon={faHouse} style={{color: "#ffa500", fontSize: "40px"}} />
+                <FontAwesomeIcon icon={faHouse} style={{color: "#ff4d14", fontSize: "40px"}} />
                 <span>Home</span>
             </div>
             <div  onClick={handleClick} className='mobile-navbar-links'>
@@ -158,14 +151,14 @@ export default function Header({activeLink}) {
             </div>
             <div onClick={artisteClick} className={'mobile-navbar-links' }>
                 <FontAwesomeIcon icon={faMusic} style={{color: "#000", fontSize: "40px"}} />
-                <span>Artistes</span>
+                <span>Talent</span>
             </div>
             <div onClick={execsClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faBriefcase} style={{color: "#ffa500", fontSize: "40px" }} />
+                <FontAwesomeIcon icon={faBriefcase} style={{color: "#ff4d14", fontSize: "40px" }} />
                 <span>The Execs</span>
             </div>
             <div onClick={blogClick} className={'mobile-navbar-links' }>
-                <FontAwesomeIcon icon={faNewspaper} style={{color: "#ffa500", fontSize: "40px"}} />
+                <FontAwesomeIcon icon={faNewspaper} style={{color: "#ff4d14", fontSize: "40px"}} />
                 <span>Blog</span>
             </div>
             <div className='mobile-navbar-links'>

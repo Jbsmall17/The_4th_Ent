@@ -23,7 +23,7 @@ div#root{
   position: fixed;
   bottom: 3%;
   right: 3%;
-  z-index: 20;
+  z-index: 9;
   cursor: pointer;
   visibility: hidden;
   transition: all ease 0.5s;
@@ -81,7 +81,7 @@ div.modal > svg{
 
 div.modal > p:nth-of-type(1){
   font-size: 2rem;
-  color: #ffa500;
+  color: #ff4d14;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
@@ -96,24 +96,86 @@ div.modal > form > input{
   width: 65%;
   padding: 5px;
   margin-right: 5%;
-  border: 2px solid #f1f1f1;
+  border: 2px solid rgba(0,0,0,0.5);
   border-radius: 4px;
-  color: #e1e1e1;
+  /* color: #e1e1e1; */
+  color: rgba(0,0,0,0.5);
   font-size: 20px;
   height: 40px;
 }
 
+@media screen and (max-width: 425px) {
+  div.modal > form > input{
+    font-size: 0.85rem;
+  }
+}
+
 div.modal > form > input::placeholder{
-  color: #e1e1e1;
+  /* color: #e1e1e1; */
+  color: rgba(0,0,0,0.5);
 }
 
 div.modal > form > input:focus{
-  outline: none;
+  outline: 2px solid #ff4d14;
+  outline-offset:1px ;
 }
 div.modal > form{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+div.modal > form + p{
+  font-size: 1rem;
+  
+}
+
+@media screen and (max-width:768px) {
+  div.modal > form + p{
+    font-size: 0.75rem;
+  }
+}
+
+div.modal > form + p.success{
+  color: rgba(0, 128, 0, 0.8);
+  animation: disappear 1s ease 1 forwards;
+}
+
+@keyframes disappear {
+  from{
+    visibility: visible;
+  }
+  to{
+    visibility: hidden;
+  }
+}
+
+div.modal > form + p.error{
+  color: rgba(255, 0, 0, 0.8);
+  animation: disappear1 1s ease 1 forwards;
+}
+
+@keyframes disappear1 {
+  from{
+    visibility: visible;
+  }
+  to{
+    visibility: hidden;
+  }
+}
+
+div.modal > form + p.pending{
+  animation: disappear2 1s ease 1 forwards;
+}
+
+@keyframes disappear2 {
+  from{
+    visibility: visible;
+  }
+  to{
+    visibility: hidden;
+  }
 }
 
 div.modal > form > button{
@@ -127,7 +189,7 @@ div.modal > form > button{
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-color: #ffa500;
+  background-color: #ff4d14;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -151,7 +213,7 @@ div.modal > form > button:hover{
 
   div.modal > p:nth-of-type(1) {
     font-size: 1.5rem;
-    color: #ffa500;
+    color: #ff4d14;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }

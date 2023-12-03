@@ -15,7 +15,7 @@ export default function Loader() {
     <div className='loader' style={styleContainer}>
        <InfinitySpin 
             width = "200"
-            color = '#ffa500'
+            color = '#ff4d14'
        />
     </div>
   )

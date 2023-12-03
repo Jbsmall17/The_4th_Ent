@@ -31,6 +31,9 @@ import { useNavigate } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Playlist from '../components/Playlist.jsx'
+import entVideo from "../assets/4thent_video.mp4"
+import about22 from "../assets/emaxee_video.mp4"
+import {IoIosArrowDown} from "react-icons/io"
 
 
 
@@ -47,17 +50,16 @@ async function getEvent(){
   console.log(response)
 }
 
-function handleClick(section){
-  navigate("/")
-  setTimeout(()=>{
-      const servicesDiv = document.querySelector(section)
-      servicesDiv.scrollIntoView({
-       behavior: 'smooth',
-       block: 'start',  // Align the top of the element with the top of the viewport
-       inline: 'start',
-      //  offsetTop : -navbarHeight
-      })
-  },50)
+function handleClick(){
+      const serviceRefNode = servicesRef.current
+      if(serviceRefNode){
+        serviceRefNode.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',  // Align the top of the element with the top of the viewport
+          inline: 'start',
+       })
+      }
+
 }
   useEffect(()=>{
     getEvent()
@@ -71,65 +73,10 @@ function handleClick(section){
     <>
       <Header  activeLink={"home"}/>
       <div ref={homeDiv} className='homepage'>
-        {/* <p className='slogan' >THE MEDIA HUB</p>
-        <p className='slogan1'>THE BEST AT WHAT WE DO</p> */}
-        {/* <div onClick={()=>handleClick("#services")} className='theent' ref={the4thDiv} >
-          <span>The</span><span>4th</span> <span>Ent.</span>
-        </div> */}
-        <Swiper
-          modules={[Autoplay, Navigation, Keyboard, EffectFade]}
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation
-          keyboard
-          effect="fade"
-          autoplay={
-            {
-              delay: 3000,
-            }
-          }
-        >
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 1' src={picture1}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 2' src={picture2}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 3' src={picture3}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 4' src={picture4}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 5' src={picture5}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 6' src={picture6}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 7' src={picture7}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 8' src={picture8}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 9' src={picture9}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 10' src={picture10}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 11' src={picture11}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 12' src={picture12}></img>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='slide-img' alt='picture 13' src={picture13}></img>
-          </SwiperSlide>
-        </Swiper>
-        {/* <p className='title'>The 4th Entertainment</p> */}
+        <video muted autoPlay loop>
+          <source src={about22} type="video/mp4" />
+        </video>
+        <IoIosArrowDown onClick={handleClick} />
       </div>
       <div className='home-services' id="services" ref={servicesRef}>
         <h3>WHAT WE DO!!</h3>

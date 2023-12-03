@@ -5,12 +5,21 @@ import "../styles/footer.css"
 import { postSubscriber } from '../backend/server';
 import { Oval } from  'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import jsonp from 'jsonp';
+import FooterForm from './FooterForm';
 
 const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const endpoint = import.meta.env.VITE_ENDPOINT
+
+
+
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  
+
+
   async function postEmail(e){
     e.preventDefault()
     setIsLoading(true)
@@ -65,30 +74,19 @@ export default function Footer() {
                 <p className='coypright'><span>&copy;copyright</span><span>The 4TH ENT</span> </p>
             </div>
             <div className='footer-container-right'>
-                <p>subscribe for The 4th Newletter</p>
-                <form onSubmit={postEmail} className='subscribe-form'>
-                    <div>
-                        {/* <label className='label'>Email Address</label> */}
-                        <input 
-                          type='text'  
-                          value={email}
-                          name='email'
-                          onChange={(e)=>{setEmail(e.target.value)}}
-                          required
-                          />
-                        <label className='label'>Email Address</label>
-                        <p className='form-icon-container'>
-                          <button type='submit'  className='subscribe'> 
-                          sign up
-                          </button>
-                          {/* <FaArrowRight  className='arrow1'/> */}
-                          <p className='form-icon-container2'>
-                            <button type='submit'  className='subscribe2'>sign up</button>
-                            {/* <FaArrowRight  className='arrow2'/> */}
-                          </p>
-                        </p>
-                    </div>
-                </form>
+              <p>subscribe for The 4th Newletter</p>
+              <MailchimpSubscribe
+                url={endpoint}
+                render={({ subscribe, status, message }) => (
+                  <>
+                  <FooterForm 
+                    status = {status}
+                    message = {message}
+                    onValidated = { formData => subscribe(formData)}
+                  />
+                  </>
+                )}
+              />
             </div>
         </div>
     </footer>

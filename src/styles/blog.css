@@ -15,7 +15,7 @@ div.blog-page-container > p{
     text-align: center;    
     font-size: 48px;
     font-weight: 600;
-    background: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
+    background: linear-gradient( 45deg, #ffe103 30%, #ff4d14 70%);
     font-family: 'Roboto Condensed', sans-serif;
     color: transparent;
     -webkit-background-clip: text;
@@ -61,7 +61,7 @@ div.blog-container > div::before{
     right: 0;
     bottom: 0;
     border: 2px solid transparent;
-    border-image: linear-gradient( 45deg, #ffbe07 30%, #ff2c18 70%);
+    border-image: linear-gradient( 45deg, #ffe103 30%, #ff4d14 70%);
     border-image-slice: 1;
     border-image-width: 4px;
     z-index: -1;

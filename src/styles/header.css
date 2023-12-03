@@ -19,7 +19,7 @@ header.mobile-header{
     padding-inline: 5%;
     padding-block: 10px;
     z-index: 3;
-    border-bottom: 1.5px solid #ffa500;
+    border-bottom: 1.5px solid #ff4d14;
     /* background-color: #4b0082; */
     background-color: #000;
 }
@@ -37,7 +37,7 @@ div.line{
   left:0;
   width:0%;
   height: 2px;
-  background-color: #ffa500;
+  background-color: #ff4d14;
 }
 
 
@@ -90,7 +90,7 @@ div.mobile-navbar-links:nth-of-type(4),
 div.mobile-navbar-links:nth-of-type(5),
 div.mobile-navbar-links:nth-of-type(7){
     background-color: #000;
-    color: #ffa500;
+    color: #ff4d14;
 }
 div.mobile-navbar-links:nth-of-type(6) > div{
     height: 6rem;
@@ -110,7 +110,7 @@ div.mobile-navbar-links:nth-of-type(7){
 }
 div.mobile-navbar-links:nth-of-type(2),div.mobile-navbar-links:nth-of-type(3),
 div.mobile-navbar-links:nth-of-type(6){
-    background-color: #ffa500;
+    background-color: #ff4d14;
     color:#000
 }
 div.mobile-navbar-links:nth-of-type(4) > svg,
@@ -127,7 +127,7 @@ div.prompt{
   background-color:#fff;
   width:100%;
   padding:2.5px;
-  color: #ffa500;
+  color: #ff4d14;
 }
 
 div.prompt > div{
@@ -149,7 +149,7 @@ div.prompt > div:hover{
 }
 div.prompt  a{
   font-size: 16px;
-  color: #ffa500;
+  color: #ff4d14;
   text-decoration: none;
   white-space: nowrap;
 
@@ -174,11 +174,11 @@ div.prompt > svg{
       background-color:#fff;
       width:100%;
       padding:2.5px;
-      color: #ffa500;
+      color: #ff4d14;
     }
     div.prompt  a{
       font-size: 20px;
-      color: #ffa500;
+      color: #ff4d14;
       text-decoration: none;
       white-space: nowrap;
     
@@ -198,7 +198,7 @@ div.prompt > svg{
         padding-block: 10px;
         justify-content: center;
         align-items: center;
-        border-bottom: 1.5px solid #ffa500;
+        border-bottom: 1.5px solid #ff4d14;
         /* background-color: #4b0082;  */
         background-color: #000;
         position: relative;
@@ -211,7 +211,7 @@ div.prompt > svg{
         left:0;
         width:0%;
         height: 2px;
-        background-color: #ffa500;
+        background-color: #ff4d14;
       }
     /* header.header.scrolled{
         background-color: #008080 ;
@@ -251,7 +251,7 @@ div.prompt > svg{
         /* transition: all ease 0.5s; */
     }
     ul.navbar-list > li.active{
-      border: 2px dashed #ffa500;
+      border: 2px dashed #ff4d14;
       
     }
     ul.dropdown{
@@ -280,7 +280,7 @@ div.prompt > svg{
       visibility: visible;
     }
     ul.navbar-list > li.active:hover .hover-text{
-      background-color: #ffa500;
+      background-color: #ff4d14;
       color: #fff;
     }
     ul.navbar-list > li  span{
@@ -296,7 +296,7 @@ div.prompt > svg{
         top:50%;
         left:50%;
         background-color: #ffffff;
-        color: #ffa500;
+        color: #ff4d14;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -333,7 +333,7 @@ div.prompt > svg{
         top:50%;
         left:50%;
         background-color: #fff;
-        color: #ffa500;
+        color: #ff4d14;
         display: flex;
         justify-content: center;
         align-items: center;

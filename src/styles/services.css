@@ -5,7 +5,7 @@
 div.fouth-service > p:nth-of-type(1){
     font-size: 24px;
     margin-block-end: 8px;
-    background: linear-gradient( 45deg, #ffbe07 10%, #ff2c18 90%);
+    background: linear-gradient( 45deg, #ffe103 10%, #ff4d14 90%);
     font-family: 'Roboto Condensed', sans-serif;
     color: transparent;
     -webkit-background-clip: text;
