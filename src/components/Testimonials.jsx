@@ -13,19 +13,19 @@ export default function Testimonials() {
             <div className='testimonials-main'>
                 <Customer 
                     img={image}
-                    name={"Salis Rofeeq"}
+                    name={"Olayinka Salis"}
                     position={"CEO THE4THENT"}
                     desc={"Sunt adipisicing elit labore qui voluptate anim laboris deserunt laboris elit eu elit. Tempor est fugiat nostrud eu. Dolor consequat occaecat tempor deserunt fugiat enim velit Lorem dolor cupidatat veniam nulla. Cupidatat adipisicing mollit pariatur proident occaecat reprehenderit. Et aute sint duis pariatur consequat."}
                 />
                 <Customer
                     img={image}
-                    name={"Salis Rofeeq"} 
+                    name={"Olayinka Salis"} 
                     position={"CEO THE4THENT"}
                     desc={"Sunt adipisicing elit labore qui voluptate anim laboris deserunt laboris elit eu elit. Tempor est fugiat nostrud eu. Dolor consequat occaecat tempor deserunt fugiat enim velit Lorem dolor cupidatat veniam nulla. Cupidatat adipisicing mollit pariatur proident occaecat reprehenderit. Et aute sint duis pariatur consequat."}    
                 />
                 <Customer 
                     img={image}
-                    name={"Salis Rofeeq"}
+                    name={"Olayinka Salis"}
                     position={"CEO THE4THENT"}
                     desc={"Sunt adipisicing elit labore qui voluptate anim laboris deserunt laboris elit eu elit. Tempor est fugiat nostrud eu. Dolor consequat occaecat tempor deserunt fugiat enim velit Lorem dolor cupidatat veniam nulla. Cupidatat adipisicing mollit pariatur proident occaecat reprehenderit. Et aute sint duis pariatur consequat."}
                 />

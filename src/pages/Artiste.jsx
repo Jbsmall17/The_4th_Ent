@@ -9,15 +9,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Playlist from '../components/Playlist'
 
-export default function Artiste() {
+export default function Artiste({setVisible}) {
   useEffect(() => {
     AOS.init();
+    setVisible(true)
   }, [])
   return (
     <div className='artistepage'>
         <Header activeLink={"artiste"} />
         <div className='artistepage-container'>
-            <p>Our Talent</p>
+            <p>Our Talents</p>
             <div className='container'>
               <div className='artiste-container'>
                 <div>

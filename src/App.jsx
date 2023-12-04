@@ -16,6 +16,9 @@ const Home = lazy(()=> import("./pages/Home"))
 const Artiste = lazy(()=> import("./pages/Artiste"))
 const MeetTheExecs = lazy(()=> import("./pages/MeetTheExecs"))
 const Blog = lazy(()=> import("./pages/Blog"))
+const PlaylistPage = lazy(()=>import("./pages/PlaylistPage"))
+
+
 
 const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -26,6 +29,7 @@ function App() {
   const [modal, setModal] = useState(false)
   const [isLoading,setIsLoading] = useState(false)
   const [email, setEmail] = useState('')
+  const [visible,setVisible] = useState(false) 
 
 
   async function postEmail(e){
@@ -81,7 +85,7 @@ function App() {
   })
   return (
     <>
-      <a className="contact" href="mailto:the4thmande@gmail.com">Contact us</a>
+      {visible &&<a className="contact" href="mailto:the4thmande@gmail.com">Contact us</a>}
       <FontAwesomeIcon 
         icon={faCircleArrowUp} 
         className="arrow-up" size="2xl" 
@@ -149,12 +153,12 @@ function App() {
         </div>
       </div>
       }
-      <Routes >
+      <Routes>
         <Route 
           path="/"
           element={
             <Suspense fallback={<Loader />}>
-              <Home />
+              <Home setVisible={setVisible} />
             </Suspense>
           }
         />
@@ -163,7 +167,7 @@ function App() {
         path="/talent"
         element={
           <Suspense fallback={<Loader />}>
-            <Artiste />
+            <Artiste setVisible={setVisible} />
           </Suspense>
           }
         />
@@ -172,22 +176,29 @@ function App() {
         path="/execs"
         element={
           <Suspense fallback={<Loader />}>
-            <MeetTheExecs />
+            <MeetTheExecs setVisible={setVisible} />
           </Suspense>
           }
         />
+
+      <Route 
+        path="/blog"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Blog setVisible={setVisible} />
+          </Suspense>
+        }
+      />
+       <Route 
+        path="/playlist"
+        element={
+          <Suspense fallback={<Loader />}>
+            <PlaylistPage setVisible={setVisible} />
+          </Suspense>
+        }
+      />
       </Routes>
 
-      <Routes>
-        <Route 
-          path="/blog"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Blog />
-            </Suspense>
-            }
-        />
-      </Routes>
     </>
   )
 }

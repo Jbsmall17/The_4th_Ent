@@ -12,7 +12,7 @@
 }
 
 div#root{
-  background-color: #000;
+  background-color: rgba(0,0,0,0.9);
   color: #fff;
   height: auto;
   overflow-x: hidden;

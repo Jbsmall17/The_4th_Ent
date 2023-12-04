@@ -65,6 +65,15 @@ export default function Header({activeLink}) {
         })
     }
 
+    function playlistClick(){
+        navigate("/playlist")
+        window.scrollTo({ 
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
+    }
+
     function handleClick(section){
         navigate("/")
         setMobileOpen(false)
@@ -99,7 +108,7 @@ export default function Header({activeLink}) {
             </li>
             <li onClick={artisteClick} className={page === "artiste" ? "active" : null} >
                 <FontAwesomeIcon icon={faMusic} size="xl" style={{color: page === "artiste"? "#ff4d14" :"#ffffff"}} />
-                <span className='hover-text' >Talent</span>
+                <span className='hover-text' >Talents</span>
             </li>
             {/* <li  onClick={handleClick}>
                 <FontAwesomeIcon icon={faScrewdriverWrench} size="xl" style={{color: "#ffffff",}} />
@@ -107,7 +116,7 @@ export default function Header({activeLink}) {
             </li> */}
             <li onClick={execsClick} className={page === "execs" ? "active" : null}>
                 <FontAwesomeIcon icon={faBriefcase} size="xl" style={{color: page === "execs"? "#ff4d14" :"#ffffff" }} />
-                <span className='hover-text' >The Execs</span>
+                <span className='hover-text' >Execs</span>
             </li>
             <li onClick={blogClick} className={page === "bloggg" ? "active" : null} >
                 <FontAwesomeIcon icon={faNewspaper} size="xl" style={{ color: page === "bloggg"? "#ff4d14" :"#ffffff"}} />
@@ -115,7 +124,7 @@ export default function Header({activeLink}) {
             </li>
         </ul>
       </nav>
-        <button>
+        <button onClick={playlistClick}>
             <p>Playlist</p>
             <span className='hover-text'>playlist</span>
         </button>
@@ -151,18 +160,18 @@ export default function Header({activeLink}) {
             </div>
             <div onClick={artisteClick} className={'mobile-navbar-links' }>
                 <FontAwesomeIcon icon={faMusic} style={{color: "#000", fontSize: "40px"}} />
-                <span>Talent</span>
+                <span>Talents</span>
             </div>
             <div onClick={execsClick} className={'mobile-navbar-links' }>
                 <FontAwesomeIcon icon={faBriefcase} style={{color: "#ff4d14", fontSize: "40px" }} />
-                <span>The Execs</span>
+                <span>Execs</span>
             </div>
             <div onClick={blogClick} className={'mobile-navbar-links' }>
                 <FontAwesomeIcon icon={faNewspaper} style={{color: "#ff4d14", fontSize: "40px"}} />
                 <span>Blog</span>
             </div>
             <div className='mobile-navbar-links'>
-                <div>
+                <div onClick={playlistClick}>
                     Playlist
                 </div>
             </div>

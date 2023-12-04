@@ -4,7 +4,9 @@ function playlistFormat(record) {
     return {
       "id": record.id,
       "url": record.fields['url'],
-      "owner": record.fields['owner']
+      "owner": record.fields['owner'],
+      "headliner" : record.fields['image1'][0].url,
+      "playlist" : record.fields['image2'][0].url
     }
   }
 

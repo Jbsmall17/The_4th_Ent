@@ -38,7 +38,7 @@ import {IoIosArrowDown} from "react-icons/io"
 
 
 
-export default function Home() {
+export default function Home({setVisible}) {
   const navigate = useNavigate()
   const homeDiv = useRef()
   const the4thDiv = useRef()
@@ -67,6 +67,7 @@ function handleClick(){
 
   useEffect(() => {
     AOS.init();
+    setVisible(true)
   }, [])
 
   return (

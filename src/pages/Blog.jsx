@@ -9,7 +9,7 @@ import Playlist from '../components/Playlist'
 // import ClipLoader from "react-spinners/ClipLoader"; 
 
 
-export default function Blog() {
+export default function Blog({setVisible}) {
     const [isLoading, setIsLoading] = useState(true)
     const [blogs, setBlogs] = useState([])
     async function getBlog(){
@@ -21,6 +21,10 @@ export default function Blog() {
 
     useEffect(()=>{
         getBlog()
+    },[])
+
+    useEffect(()=>{
+        setVisible(true)
     },[])
   return (
     <div className='blog-page'>
