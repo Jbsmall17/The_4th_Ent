@@ -11,10 +11,11 @@ div.playlistpage{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 div.playlistpage > svg{
-    position: fixed;
+    position: absolute;
     top:5%;
     left:2%;
     font-size: 24px;
@@ -109,7 +110,7 @@ a.playlist-cta:active{
         margin-block: 75px;
     }
     div.playlistpage > svg {
-        position: fixed;
+        position: absolute;
         top: 4%;
         left: 2%;
         font-size: 24px;
@@ -166,8 +167,8 @@ a.playlist-cta:active{
         margin-block: 50px;
     }
     div.playlistpage > svg {
-        position: fixed;
-        top: 3%;
+        position: absolute;
+        top: 2.5%;
         left: 2%;
         font-size: 20px;
         cursor: pointer;

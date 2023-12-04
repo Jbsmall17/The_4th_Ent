@@ -90,6 +90,7 @@ function App() {
         icon={faCircleArrowUp} 
         className="arrow-up" size="2xl" 
         onClick={handleClick}
+        style={{color: "#3498db"}}
         />
       { modal &&
       <div className="modal-container">
