@@ -10,6 +10,15 @@ function playlistFormat(record) {
     }
   }
 
+function songListFormat(record){
+    return {
+        "id": record.id,
+        "S/N": record.fields['S/N'],
+        "artist": record.fields["artist"],
+        "songName": record.fields["songName"]
+    }
+}
+
 function subscribersFormat(record){
     return record.fields['email'] 
 }
@@ -25,7 +34,8 @@ function eventFormat(record){
         "name" : record.fields['name'],
         "description" : record.fields['description'],
         "date" : formattedDate,
-        "url" : record.fields['url']
+        "url" : record.fields['url'],
+        "S/N" : record.fields['S/N']
     }
 }
 
@@ -36,14 +46,19 @@ function blogFormat(record){
         "title" : record.fields['title'],
         "description" : record.fields['description'],
         "date" : formatDate,
-        "url" : record.fields['url']
+        "url" : record.fields['url'],
+        "S/N" : record.fields['S/N']
     }
 }
+
+
+
 
 export {
     playlistFormat,
     formatDate,
     eventFormat,
     blogFormat,
-    subscribersFormat
+    subscribersFormat,
+    songListFormat
 }

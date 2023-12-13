@@ -2,7 +2,8 @@ import {
     playlistFormat,
     eventFormat,
     blogFormat,
-    subscribersFormat
+    subscribersFormat,
+    songListFormat
 } from "./helper"
 import axios from "axios"
 // import dotenv from "dotenv"
@@ -17,6 +18,7 @@ const  EVENT_ID = import.meta.env.VITE_EVENT_ID
 const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID 
 const BLOG_ID = import.meta.env.VITE_BLOG_ID 
 const SUBSCRIBERS_ID = import.meta.env.VITE_SUBSCRIBERS_ID 
+const SONG_ID = import.meta.env.VITE_SONG_ID
 const TOKEN = import.meta.env.VITE_BASE_TOKEN 
 
 
@@ -42,11 +44,35 @@ async function fetchPlaylist(){
     }
 }
 
+async function fetchSonglist(){
+    try {
+        let songList = await axios.get(`${ENDPOINT}/${SONG_ID}`,{
+            headers : {
+                Authorization : `Bearer ${TOKEN}`  
+            },
+            params: {
+                sort: [{ field: 'S/N', direction: 'asc' }],
+            }
+        })
+        let thisWeekSongList = songList.data.records
+        .map(songListFormat)
+        // .filter((playlist)=>{
+        //     return playlist.url !== undefined
+        // });
+        return { status: 200, message: 'Playlist fetched successfully', data : thisWeekSongList };
+    } catch (error) {
+        return { status: 500, message: 'Internal Server Error', error };
+    }
+}
+
 async function fetchEvent(){
     try{
         const Events = await axios.get(`${ENDPOINT}/${EVENT_ID}`,{
             headers : {
                 Authorization : `Bearer ${TOKEN}`  
+            },
+            params: {
+                sort: [{ field: 'S/N', direction: 'asc' }],
             }
         })
         const formattedEvent = Events.data.records
@@ -65,6 +91,9 @@ async function fetchBlog(){
         const Blogs = await axios.get(`${ENDPOINT}/${BLOG_ID}`,{
             headers : {
                 Authorization : `Bearer ${TOKEN}`  
+            },
+            params: {
+                sort: [{ field: 'S/N', direction: 'asc' }],
             }
         })
         const formattedBlog = Blogs.data.records
@@ -116,5 +145,6 @@ export {
     fetchPlaylist,
     fetchBlog,
     fetchEvent,
-    postSubscriber
+    postSubscriber,
+    fetchSonglist
 }

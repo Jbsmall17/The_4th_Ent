@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "../styles/playlistpage.css"
-import { fetchPlaylist } from '../backend/server'
+import { fetchPlaylist,fetchSonglist } from '../backend/server'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Keyboard, EffectFade } from 'swiper/modules';
 import { MdOutlineArrowBackIos } from "react-icons/md";
@@ -17,6 +17,8 @@ import 'aos/dist/aos.css';
 
 export default function PlaylistPage({setVisible}) {
   const [playlist, setPlaylist] = useState([])
+  const [songList, setSongList] = useState([])
+  const [songListVisible,setSongListVisible] = useState(false)
   const [headliner, setHeadliner] = useState("")
   const [imageVisible, setImageVisible] = useState(false)
   async function getPlaylist(){
@@ -29,6 +31,16 @@ export default function PlaylistPage({setVisible}) {
     }
   }
 
+  async function getSonglist(){
+    const response = await fetchSonglist()
+    if(response.status === 200){
+      setSongList(response.data)
+      setSongListVisible(true)
+    }else{
+      setSongList([])
+    }
+  }
+
   function goBack() {
     window.history.back()
   }
@@ -36,16 +48,25 @@ export default function PlaylistPage({setVisible}) {
   useEffect(()=>{
     setVisible(true)
     getPlaylist()
+    getSonglist()
     AOS.init()
   },[])
 
+
+{/* <RotatingLines
+                      strokeColor="grey"
+                      strokeWidth="5"
+                      animationDuration="0.75"
+                      width="96"
+                      visible={true}
+                    /> */}
+
   return (
-    <div className='playlistpage'>
-        <MdOutlineArrowBackIos  onClick={goBack}/>
+    <div className='playlistpage' style={{display:'flex', justifyContent:"center", alignItems:"center"}}>
+        <MdOutlineArrowBackIos  onClick={goBack} className='goback'/>
+        { songListVisible && imageVisible
+        ?        
         <div className='playlistpage-container' data-aos="zoom-in" data-aos-duration="2000" >
-          {/* <div>
-             <img src={playlist[0]?.headliner} height="400" alt='playlist graphics'/>
-          </div> */} 
            <Swiper
             modules={[Autoplay,EffectFade,Keyboard]}
             spaceBetween={50}
@@ -60,44 +81,27 @@ export default function PlaylistPage({setVisible}) {
             }
             >
               <SwiperSlide>
-                {
-                  imageVisible
-                  ?
-                  <img src={playlist[0]?.headliner} height="400" alt='playlist graphics'/>
-                  : <RotatingLines
-                      strokeColor="grey"
-                      strokeWidth="5"
-                      animationDuration="0.75"
-                      width="96"
-                      visible={true}
-                    />
-                }
+                <img src={playlist[0]?.headliner} height="400" alt='playlist graphics'/>
               </SwiperSlide>
               <SwiperSlide>
-                {/* <LazyLoadImage
-                  alt={'playlist graphics'}
-                  height={"400"}
-                  src={playlist[0]?.playlist} // use normal <img> attributes as props 
-                /> */}
-                 {
-                  imageVisible
-                  ?
-                  <img src={playlist[0]?.playlist} height="400" alt='playlist graphics'/>
-                  : <RotatingLines
-                      strokeColor="grey"
-                      strokeWidth="5"
-                      animationDuration="0.75"
-                      width="96"
-                      visible={true}
-                    />
-                }
-                {/* <img src={playlist[0]?.playlist} height="400" alt='playlist graphics'/> */}
+                <img src={playlist[0]?.playlist} height="400" alt='playlist graphics'/>
               </SwiperSlide>
             </Swiper>
           <div>
             <p>THE 4TH NMF PLAYLIST</p>
             <ul>
-              <li><span>Danny Brace, Runtown & Dj consequence</span><span>On my way</span></li>
+              {
+                songList.map((song,index)=>{
+                  const {artist,songName} = song
+                  return (
+                    <li key={index}>
+                      <span>{artist}</span>
+                      <span>{songName}</span>
+                    </li>
+                  )
+                })
+              }
+              {/* <li><span>Danny Brace, Runtown & Dj consequence</span><span>On my way</span></li>
               <li><span>DanDizzy</span><span>Igbo</span></li>
               <li><span>Tyla</span><span>Butterflies</span></li>
               <li><span>Bad Boy Timz</span><span>Up Forever</span></li>
@@ -114,13 +118,23 @@ export default function PlaylistPage({setVisible}) {
               <li><span>Moelogo</span><span>Point of view</span></li>
               <li><span>wiz khalifa</span><span>Decision album</span></li>
               <li><span>Brymo</span><span>Macabre Album</span></li>
-              <li><span>PaBrymo</span><span>City boy Duluxe</span></li>
+              <li><span>PaBrymo</span><span>City boy Duluxe</span></li> */}
             </ul>
           </div>
           <a href={playlist[0]?.url} className='playlist-cta'>
               listen
             </a>
         </div>
+        :  (
+          <RotatingLines
+            strokeColor="white"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          /> 
+        )
+        }
     </div>
   )
 }

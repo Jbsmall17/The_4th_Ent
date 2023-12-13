@@ -14,7 +14,7 @@ div.playlistpage{
     position: relative;
 }
 
-div.playlistpage > svg{
+div.playlistpage > svg.goback{
     position: absolute;
     top:5%;
     left:2%;
@@ -100,6 +100,30 @@ a.playlist-cta:active{
 }
 
 
+@media screen and (max-width:1025px) {
+    div.playlistpage{
+        height: auto;
+    }
+    div.playlistpage-container{
+        width: 90%;
+        flex-direction: column;
+        margin-block: 75px;
+    } 
+    div.playlistpage-container > div {
+        width: 100%;
+    }
+    div.playlistpage-container > div:nth-of-type(2) {
+        padding: 25px 50px;
+        padding-bottom: 75px;
+    }
+    a.playlist-cta {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 2%
+    }
+}
+
 @media screen and (max-width:768px) {
     div.playlistpage{
         height: auto;
@@ -109,7 +133,7 @@ a.playlist-cta:active{
         flex-direction: column;
         margin-block: 75px;
     }
-    div.playlistpage > svg {
+    div.playlistpage > svg.goback {
         position: absolute;
         top: 4%;
         left: 2%;
@@ -166,7 +190,7 @@ a.playlist-cta:active{
         flex-direction: column;
         margin-block: 50px;
     }
-    div.playlistpage > svg {
+    div.playlistpage > svg.goback {
         position: absolute;
         top: 2.5%;
         left: 2%;
