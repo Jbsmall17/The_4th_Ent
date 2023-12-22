@@ -1,4 +1,4 @@
-// 
+ 
 
 function playlistFormat(record) {
     return {
@@ -51,6 +51,15 @@ function blogFormat(record){
     }
 }
 
+function execsPicturesFormat(record){
+    return {
+        "id": record.id,
+        "S/N": record.fields['S/N'],
+        "Name": record.fields['Name'],
+        "Position" : record.fields['Position'],
+        "Picture" : record.fields['Picture'][0].url
+      }
+}
 
 
 
@@ -60,5 +69,6 @@ export {
     eventFormat,
     blogFormat,
     subscribersFormat,
-    songListFormat
+    songListFormat,
+    execsPicturesFormat
 }

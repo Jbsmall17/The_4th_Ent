@@ -47,7 +47,7 @@ export default function Home({setVisible}) {
 
 async function getEvent(){
   const response = await fetchEvent()
-  console.log(response)
+  // console.log(response)
 }
 
 function handleClick(){

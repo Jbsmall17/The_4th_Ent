@@ -12,7 +12,7 @@ export default function Playlist() {
     
   async function getPlaylist(){
       const response = await fetchPlaylist()
-      console.log(response)
+      // console.log(response)
       setPlaylistUrl(response.data[0].url)
   }
   useEffect(()=>{

@@ -14,7 +14,7 @@ export default function ModalForm({message,status,onValidated}) {
               setEmail("")
             }
         }catch(error){
-            console.log(error)
+            // console.log(error)
         }
     }
   return (

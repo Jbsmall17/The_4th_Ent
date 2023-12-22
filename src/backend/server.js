@@ -3,7 +3,8 @@ import {
     eventFormat,
     blogFormat,
     subscribersFormat,
-    songListFormat
+    songListFormat,
+    execsPicturesFormat
 } from "./helper"
 import axios from "axios"
 // import dotenv from "dotenv"
@@ -19,6 +20,7 @@ const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID
 const BLOG_ID = import.meta.env.VITE_BLOG_ID 
 const SUBSCRIBERS_ID = import.meta.env.VITE_SUBSCRIBERS_ID 
 const SONG_ID = import.meta.env.VITE_SONG_ID
+const EXECS_PICTURE_ID = import.meta.env.VITE_EXECS_PICTURE_ID
 const TOKEN = import.meta.env.VITE_BASE_TOKEN 
 
 
@@ -54,11 +56,8 @@ async function fetchSonglist(){
                 sort: [{ field: 'S/N', direction: 'asc' }],
             }
         })
-        let thisWeekSongList = songList.data.records
-        .map(songListFormat)
-        // .filter((playlist)=>{
-        //     return playlist.url !== undefined
-        // });
+        let thisWeekSongList = songList.data.records.map(songListFormat)
+       
         return { status: 200, message: 'Playlist fetched successfully', data : thisWeekSongList };
     } catch (error) {
         return { status: 500, message: 'Internal Server Error', error };
@@ -102,7 +101,25 @@ async function fetchBlog(){
         return { status: 200, message : "Blogs fetched successfully", data: formattedBlog}
     }
     catch(error){
-        return { status : 200, message: "Blogs fetched successfully", error}
+        return { status : 404, message: "An error occured", error}
+    }
+}
+
+async function fetchExecsPictures(){
+    try{
+        const ExecsPictures = await axios.get(`${ENDPOINT}/${EXECS_PICTURE_ID}`,{
+            headers : {
+                Authorization : `Bearer ${TOKEN}`  
+            },
+            params: {
+                sort: [{ field: 'S/N', direction: 'asc' }],
+            }
+        })
+        const formattedExecsPictures = ExecsPictures.data.records
+        .map(execsPicturesFormat)
+        return { status: 200, message : "Event Pictures fetched successfully", data: formattedExecsPictures}
+    }catch(error){
+        return { status: 500, message : "Internal Server Error", error }
     }
 }
 
@@ -125,7 +142,7 @@ async function postSubscriber(email){
         {headers})
 
         const emailExist = response.data.records.length > 0
-        console.log(emailExist)
+        // console.log(emailExist)
         if(!emailExist){
             const response = await axios.post(endpoint,postData,{headers})
             // console.log('Record created successfully:', response.data);
@@ -146,5 +163,6 @@ export {
     fetchBlog,
     fetchEvent,
     postSubscriber,
-    fetchSonglist
+    fetchSonglist,
+    fetchExecsPictures
 }
